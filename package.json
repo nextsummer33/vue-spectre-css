@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "spectre.css": "^0.5.8",
     "vue": "^2.6.10",
+    "vue-functional-data-merge": "^3.1.0",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
@@ -36,7 +38,9 @@
       "plugin:vue/essential",
       "@vue/prettier"
     ],
-    "rules": {},
+    "rules": {
+      "prettier/prettier": ["error", { "singleQuote": true }]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
