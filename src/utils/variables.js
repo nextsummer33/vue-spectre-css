@@ -1,3 +1,6 @@
 export default {
-  breakpoints: ['xs', 'sm', 'md', 'lg', 'xl']
+  layout: {
+    viewports: ['xs', 'sm', 'md', 'lg', 'xl'],
+    offsets: ['mx', 'ml', 'mr']
+  }
 };
