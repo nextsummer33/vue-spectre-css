@@ -3,11 +3,9 @@ import { mergeData } from 'vue-functional-data-merge';
 import { getCachedLayout } from '@/utils/get-var';
 import memoize from '@/utils/memoize';
 import { dashCase, splitCamelCase } from '@/utils/string';
+import { boolType } from '@/utils/proptypes';
 
 const colRegx = /^\d*$|auto/;
-const boolType = () => {
-  return { type: Boolean, default: false };
-};
 const numStrType = () => {
   return {
     type: [Number, String],
@@ -67,8 +65,8 @@ export default {
 
     layout.viewports.forEach(vp => {
       const val = props[`${vp}Col`];
-      if (val) {
-        classlist.push(`col-${vp}-${val}`);
+      if (val !== null && val !== undefined) {
+        classlist.push(`col-${vp}-${val || 'auto'}`);
       }
     });
 

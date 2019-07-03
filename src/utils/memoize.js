@@ -1,4 +1,4 @@
-const memoize = fn => {
+export const memoize = fn => {
   if (!fn.__cache__) {
     Object.assign(fn, {
       __cache__: Object.create(null)

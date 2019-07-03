@@ -38,7 +38,7 @@ describe('s-column', () => {
         xsCol: '10',
         smCol: '2',
         mdCol: '4',
-        lgCol: '5',
+        lgCol: '',
         xlCol: 'auto'
       }
     });
@@ -50,7 +50,7 @@ describe('s-column', () => {
         'col-xs-10',
         'col-sm-2',
         'col-md-4',
-        'col-lg-5',
+        'col-lg-auto',
         'col-xl-auto'
       ])
     );
