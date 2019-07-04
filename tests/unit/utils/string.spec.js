@@ -1,22 +1,22 @@
-import { capFirst, splitCamelCase, dashCase } from '@/utils/string';
+import { capf, splitCamelCase, dashCase } from '@/utils/string';
 
 describe('string utils', () => {
-  test('capFirst > should throw an error when value is invalid type', () => {
+  test('capf > should throw an error when value is invalid type', () => {
     const temp = console.error;
     expect(() => {
-      capFirst(1);
+      capf(1);
     }).toThrowError('Value should be a string.');
     console.error = temp;
   });
 
-  test('capFirst > capital first letter of a string', () => {
-    expect(capFirst('apple')).toBe('Apple');
-    expect(capFirst('ApPle')).toBe('Apple');
-    expect(capFirst(' apple ')).toBe('Apple');
-    expect(capFirst('apple ')).toBe('Apple');
-    expect(capFirst(' ')).toBe('');
-    expect(capFirst('')).toBe('');
-    expect(capFirst(' this is a')).toBe('This is a');
+  test('capf > capital first letter of a string', () => {
+    expect(capf('apple')).toBe('Apple');
+    expect(capf('ApPle')).toBe('Apple');
+    expect(capf(' apple ')).toBe('Apple');
+    expect(capf('apple ')).toBe('Apple');
+    expect(capf(' ')).toBe('');
+    expect(capf('')).toBe('');
+    expect(capf(' this is a')).toBe('This is a');
   });
 
   test('splitCamelCase > split as expected', () => {

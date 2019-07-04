@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue from '@/utils/vue';
 import { mergeData } from 'vue-functional-data-merge';
 import memoize from '@/utils/memoize';
 import { stringType, boolType } from '@/utils/proptypes';
@@ -25,7 +25,7 @@ export default Vue.extend({
     ].filter(Boolean);
 
     return h(
-      'div',
+      props.tag,
       mergeData(data, { staticClass: 'columns', class: _class }),
       children
     );
