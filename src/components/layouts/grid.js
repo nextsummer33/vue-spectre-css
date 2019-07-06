@@ -2,11 +2,10 @@ import { mergeData } from 'vue-functional-data-merge';
 import memoize from '@/utils/memoize';
 import { stringType, boolType } from '@/utils/proptypes';
 import { getCachedLayout } from '@/utils/get-var';
-import { capf, dashCase } from '@/utils/string';
 
 const cprops = memoize(() => {
   const props = getCachedLayout().viewports.reduce((p, vp) => {
-    p['grid' + capf(vp)] = boolType();
+    p[vp] = boolType();
     return p;
   }, {});
 
@@ -25,9 +24,9 @@ export default {
   },
   render(h, { props, data, children }) {
     const _class = Object.entries(props)
-      .filter(p => typeof p[1] === 'boolean' && p[1])
+      .filter(p => !p[1].length && p[1])
       .reduce((arr, p) => {
-        arr.push(dashCase(p[0]));
+        arr.push('grid-' + p[0]);
         return arr;
       }, []);
 

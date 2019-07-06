@@ -13,20 +13,26 @@
         <s-col col="4">col-6</s-col>
       </s-row>
     </s-grid>
-    <s-grid grid-xs>
-      xs container
-    </s-grid>
-    <s-grid grid-sm>
-      sm container
-    </s-grid>
-    <s-grid grid-md>
-      md container
-    </s-grid>
-    <s-grid grid-lg>
-      lg container
-    </s-grid>
-    <s-grid grid-xl>
-      xl container
+    <s-grid md>
+      <s-navbar>
+        <template v-slot:left>
+          <a href="" class="navbar-brand">Spectre.css</a>
+        </template>
+        <template v-slot:center
+          >yoyo</template
+        >
+        <template v-slot:right>
+          <div class="input-group input-inline">
+            <input class="form-input" type="text" placeholder="search" />
+            <button class="btn btn-primary input-group-btn">Search</button>
+          </div>
+        </template>
+      </s-navbar>
+      <s-navbar>
+        <s-navbar-item>
+          <p>this is a customize template</p>
+        </s-navbar-item>
+      </s-navbar>
     </s-grid>
   </div>
 </template>

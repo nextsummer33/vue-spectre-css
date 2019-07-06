@@ -15,11 +15,11 @@ describe('s-container', () => {
   test('added class name when grid prop is set', () => {
     const w = shallowMount(SGrid, {
       propsData: {
-        gridXs: true,
-        gridSm: true,
-        gridMd: true,
-        gridLg: true,
-        gridXl: true
+        xs: true,
+        sm: true,
+        md: true,
+        lg: true,
+        xl: true
       }
     });
     expect(w.classes()).toEqual(
