@@ -1,9 +1,8 @@
-import Vue from '@/utils/vue';
 import { mergeData } from 'vue-functional-data-merge';
 import memoize from '@/utils/memoize';
 import { stringType, boolType } from '@/utils/proptypes';
 
-const genProps = memoize(() => {
+const cprops = memoize(() => {
   return {
     tag: stringType('div'),
     gapless: boolType(),
@@ -11,23 +10,23 @@ const genProps = memoize(() => {
   };
 });
 
-export default Vue.extend({
+export default {
   name: 'SRow',
   functional: true,
   get props() {
     delete this.props;
-    return (this.props = genProps());
+    return (this.props = cprops());
   },
   render(h, { props, data, children }) {
-    const _class = [
+    const cls = [
       props.gapless && 'col-gapless',
       props.oneline && 'col-oneline'
     ].filter(Boolean);
 
     return h(
       props.tag,
-      mergeData(data, { staticClass: 'columns', class: _class }),
+      mergeData(data, { staticClass: 'columns', class: cls }),
       children
     );
   }
-});
+};
