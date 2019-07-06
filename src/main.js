@@ -3,11 +3,11 @@ import App from './App.vue';
 import router from './router';
 import 'spectre.css';
 import layouts from './components/layouts';
-import navbar from './components/comps/navbar';
+import comps from './components/comps';
 
 Vue.config.productionTip = false;
 Vue.use(layouts);
-Vue.use(navbar);
+Vue.use(comps);
 
 new Vue({
   router,
