@@ -1,10 +1,9 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { stringType } from '@/utils/proptypes';
 import itm from './navbar-item';
-import Vue from '@/utils/vue';
 
-export default Vue.extend({
-  name: 'SNavbar',
+export default {
+  name: 'SNvb',
   functional: true,
   props: {
     tag: stringType('header')
@@ -18,4 +17,4 @@ export default Vue.extend({
     ];
     return h(props.tag, mergeData(data, { staticClass: 'navbar' }), children);
   }
-});
+};

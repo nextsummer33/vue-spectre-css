@@ -1,21 +1,16 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { stringType, boolType } from '@/utils/proptypes';
-import Vue from '@/utils/vue';
+import { fcomp } from '@/utils/factory';
 
-export default Vue.extend({
-  name: 'SNavbarItem',
-  functional: true,
+const comp = fcomp('section', props => {
+  return props.center ? 'navbar-center' : 'navbar-section';
+});
+
+export default {
+  ...comp,
+  name: 'SNvbItem',
   props: {
     tag: stringType('section'),
     center: boolType(false)
-  },
-  render(h, { props, data, children }) {
-    return h(
-      props.tag,
-      mergeData(data, {
-        staticClass: props.center ? 'navbar-center' : 'navbar-section'
-      }),
-      children
-    );
   }
-});
+};

@@ -14,9 +14,13 @@
       </s-row>
     </s-grid>
     <s-grid md>
-      <s-navbar>
+      <s-nvb>
         <template v-slot:left>
-          <a href="" class="navbar-brand">Spectre.css</a>
+          <s-nvb-brand
+            v-show="show"
+            href="hello"
+            v-text="show ? 'spectre.css' : ''"
+          ></s-nvb-brand>
         </template>
         <template v-slot:center
           >yoyo</template
@@ -27,18 +31,24 @@
             <button class="btn btn-primary input-group-btn">Search</button>
           </div>
         </template>
-      </s-navbar>
-      <s-navbar>
-        <s-navbar-item>
+      </s-nvb>
+      <s-nvb>
+        <s-nvb-item>
           <p>this is a customize template</p>
-        </s-navbar-item>
-      </s-navbar>
+        </s-nvb-item>
+      </s-nvb>
     </s-grid>
+    <button @click="show = !show" v-text="show ? 'hide' : 'show'"></button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home'
+  name: 'home',
+  data() {
+    return {
+      show: false
+    };
+  }
 };
 </script>

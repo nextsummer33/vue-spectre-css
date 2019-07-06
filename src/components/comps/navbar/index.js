@@ -1,12 +1,14 @@
-import Navbar from './navbar';
-import NavbarItem from './navbar-item';
+import Nvb from './navbar';
+import NvbItem from './navbar-item';
+import NvbBrand from './navbar-brand';
 
-export const SNavbar = Navbar;
-export const SNavbarItem = NavbarItem;
+export const SNvb = Nvb;
+export const SNvbItem = NvbItem;
 
 export default {
   install(Vue) {
-    Vue.component('s-navbar', Navbar);
-    Vue.component('s-navbar-item', NavbarItem);
+    Vue.component('s-nvb', Nvb);
+    Vue.component('s-nvb-item', NvbItem);
+    Vue.component('s-nvb-brand', NvbBrand);
   }
 };
