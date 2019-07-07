@@ -2,17 +2,13 @@ import { mergeData } from 'vue-functional-data-merge';
 import { stringType, boolType } from '@/utils/proptypes';
 import memoize from '@/utils/memoize';
 import { getButton as getBtn } from '@/utils/get-var';
-import { arrayContains } from '../../utils/array';
 
 const cprops = memoize(() => {
   const bvar = getBtn();
 
   const props = bvar.colors
     .concat(bvar.types, bvar.sizes, bvar.states, 'actionCircle')
-    .reduce((p, v) => {
-      p[v] = boolType();
-      return p;
-    }, {});
+    .reduce((p, v) => (p[v] = boolType()) && p, {});
 
   return {
     tag: stringType('button'),
@@ -22,26 +18,28 @@ const cprops = memoize(() => {
 
 const btnClass = memoize((props, injs) => {
   const bvar = getBtn();
-  const pfx = 'btn-';
   const cpyps = Object.assign({}, props);
   const cls = [];
 
+  // special case for circle
   if (cpyps.actionCircle) {
     cpyps.action = cls.push('s-circle') > 0;
     delete cpyps.actionCircle;
   }
 
+  // handle injections
+  bvar.parentVars.forEach(v => {
+    if (injs.vars[v])
+      v === 'inputGroup' ? cls.push('input-group-btn') : (cpyps[v] = true);
+  });
+
+  // handle boolean properties
   Object.entries(cpyps)
     .filter(p => !p[1].length && p[1])
     .forEach(p => {
       const v = p[0];
-      cls.push(bvar.states.includes(v) ? v : pfx + v);
+      cls.push(bvar.states.includes(v) ? v : 'btn-' + v);
     });
-
-  bvar.parentVars.forEach(v => {
-    const c = v == 'inputGroup' ? 'input-group-btn' : pfx + v;
-    injs.vars[v] && !arrayContains(cls, c) && cls.push(c);
-  });
 
   return cls;
 }, true);
@@ -66,7 +64,7 @@ export default {
         staticClass: 'btn',
         class: btnClass(props, injections)
       }),
-      children
+      children || ['Button']
     );
   }
 };
