@@ -1,10 +1,10 @@
 import { mergeData } from 'vue-functional-data-merge';
 import memoize from '@/utils/memoize';
 import { stringType, boolType } from '@/utils/proptypes';
-import { getCachedLayout } from '@/utils/get-var';
+import { getLayout } from '@/utils/get-var';
 
 const cprops = memoize(() => {
-  const props = getCachedLayout().viewports.reduce((p, vp) => {
+  const props = getLayout().viewports.reduce((p, vp) => {
     p[vp] = boolType();
     return p;
   }, {});

@@ -1,6 +1,6 @@
 import { arrayContains } from '@/utils/array';
 import { mergeData } from 'vue-functional-data-merge';
-import { getCachedLayout } from '@/utils/get-var';
+import { getLayout } from '@/utils/get-var';
 import memoize from '@/utils/memoize';
 import { dashCase, splitCamelCase } from '@/utils/string';
 import { boolType } from '@/utils/proptypes';
@@ -21,7 +21,7 @@ const numStrType = () => {
 };
 
 const genProps = memoize(() => {
-  const layout = getCachedLayout();
+  const layout = getLayout();
   let compProps = layout.viewports.reduce((props, vp) => {
     props[`${vp}Auto`] = props[`${vp}Show`] = props[`${vp}Hide`] = boolType();
     props[`${vp}Col`] = numStrType();
@@ -55,7 +55,7 @@ export default {
     return (this.props = genProps());
   },
   render(h, { props, data, children }) {
-    const layout = getCachedLayout();
+    const layout = getLayout();
     const classlist = [];
     const entries = Object.entries(props);
 
