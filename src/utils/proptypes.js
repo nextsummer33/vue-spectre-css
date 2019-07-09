@@ -6,7 +6,7 @@ export function boolType(val = false, validator = undefined) {
   };
 }
 
-export function stringType(val = null, validator = undefined) {
+export function strType(val = null, validator = undefined) {
   return {
     type: String,
     default: val,
@@ -14,7 +14,24 @@ export function stringType(val = null, validator = undefined) {
   };
 }
 
+export function arrType(val = [], validator = undefined) {
+  return {
+    type: Array,
+    default: () => val,
+    validator
+  };
+}
+
+export function numType(val = 0, validator = undefined) {
+  return {
+    type: Number,
+    default: val,
+    validator
+  };
+}
 export default {
   boolType,
-  stringType
+  strType,
+  arrType,
+  numType
 };

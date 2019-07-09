@@ -1,9 +1,9 @@
-import navbar from './navbar';
-import hero from './hero';
+import Navbar from './navbar';
+import Hero from './hero';
 
 export default {
   install: Vue => {
-    Vue.use(navbar);
-    Vue.use(hero);
+    Vue.use(Navbar);
+    Vue.use(Hero);
   }
 };

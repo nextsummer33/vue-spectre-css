@@ -1,5 +1,5 @@
 import { mergeData } from 'vue-functional-data-merge';
-import { stringType, boolType } from '@/utils/proptypes';
+import { strType, boolType } from '@/utils/proptypes';
 import { fcomp } from '@/utils/factory';
 
 const comp = fcomp('section', props => {
@@ -10,7 +10,7 @@ export default {
   ...comp,
   name: 'SNvbItem',
   props: {
-    tag: stringType('section'),
+    tag: strType('section'),
     center: boolType(false)
   }
 };

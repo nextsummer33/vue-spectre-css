@@ -1,10 +1,10 @@
 import { mergeData } from 'vue-functional-data-merge';
 import memoize from '@/utils/memoize';
-import { stringType, boolType } from '@/utils/proptypes';
+import { strType, boolType } from '@/utils/proptypes';
 
 const cprops = memoize(() => {
   return {
-    tag: stringType('div'),
+    tag: strType('div'),
     gapless: boolType(),
     oneline: boolType()
   };

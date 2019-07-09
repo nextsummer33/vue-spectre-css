@@ -1,44 +1,38 @@
 import { mergeData } from 'vue-functional-data-merge';
-import { stringType, boolType } from '@/utils/proptypes';
+import { strType, boolType } from '@/utils/proptypes';
 import memoize from '@/utils/memoize';
 import { getButton as getBtn } from '@/utils/get-var';
 
 const cprops = memoize(() => {
-  const bvar = getBtn();
-
-  const props = bvar.colors
-    .concat(bvar.types, bvar.sizes, bvar.states, 'actionCircle')
+  const { sizes, states, types, colors } = getBtn();
+  const props = colors
+    .concat(types, sizes, states, 'actionCircle')
     .reduce((p, v) => (p[v] = boolType()) && p, {});
 
   return {
-    tag: stringType('button'),
+    tag: strType('button'),
+    icon: strType(''),
     ...props
   };
 });
 
-const btnClass = memoize((props, injs) => {
-  const bvar = getBtn();
+const btnClass = memoize(props => {
+  const { states } = getBtn();
   const cpyps = Object.assign({}, props);
   const cls = [];
 
   // special case for circle
   if (cpyps.actionCircle) {
-    cpyps.action = cls.push('s-circle') > 0;
-    delete cpyps.actionCircle;
+    cpyps.action = delete cpyps.actionCircle;
+    cls.push('s-circle');
   }
-
-  // handle injections
-  bvar.parentVars.forEach(v => {
-    if (injs.vars[v])
-      v === 'inputGroup' ? cls.push('input-group-btn') : (cpyps[v] = true);
-  });
 
   // handle boolean properties
   Object.entries(cpyps)
-    .filter(p => !p[1].length && p[1])
+    .filter(p => typeof p[1] == 'boolean' && p[1])
     .forEach(p => {
       const v = p[0];
-      cls.push(bvar.states.includes(v) ? v : 'btn-' + v);
+      cls.push(states.includes(v) ? v : 'btn-' + v);
     });
 
   return cls;
@@ -51,18 +45,12 @@ export default {
     delete this.props;
     return (this.props = cprops());
   },
-  inject: {
-    vars: {
-      from: 'parentVars',
-      default: {}
-    }
-  },
-  render(h, { props, data, children, injections }) {
+  render(h, { props, data, children }) {
     return h(
       props.tag,
       mergeData(data, {
         staticClass: 'btn',
-        class: btnClass(props, injections)
+        class: btnClass(props)
       }),
       children || ['Button']
     );

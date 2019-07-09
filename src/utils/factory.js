@@ -1,5 +1,5 @@
 import { mergeData } from 'vue-functional-data-merge';
-import { stringType } from './proptypes';
+import { strType } from './proptypes';
 
 const rnproxy = stclass => {
   return (h, { props, data, children }) => {
@@ -17,7 +17,7 @@ export const fcomp = (tag, stclass) => {
   return {
     functional: true,
     props: {
-      tag: stringType(tag)
+      tag: strType(tag)
     },
     render: rnproxy(stclass)
   };

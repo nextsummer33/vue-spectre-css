@@ -17,7 +17,6 @@ export default {
     colors: ['primary', 'success', 'error'],
     types: ['link', 'action', 'clear'],
     sizes: ['sm', 'lg', 'block'],
-    states: ['loading', 'active', 'disabled'],
-    parentVars: ['primary', 'inputGroup', 'sm', 'lg']
+    states: ['loading', 'active', 'disabled']
   }
 };

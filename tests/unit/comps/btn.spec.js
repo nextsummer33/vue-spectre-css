@@ -67,31 +67,4 @@ describe('s-hero', () => {
       expect.arrayContaining(['btn', 'btn-action', 's-circle'])
     );
   });
-
-  test('inject input group', () => {
-    const w = mount(
-      Vue.extend({
-        template: '<div><btn /></div>',
-        components: {
-          Btn
-        },
-        provide: {
-          parentVars: {
-            inputGroup: true,
-            sm: true,
-            lg: true,
-            primary: true
-          }
-        }
-      })
-    );
-    expect(w.find(Btn).classes()).toEqual(
-      expect.arrayContaining([
-        'input-group-btn',
-        'btn-sm',
-        'btn-lg',
-        'btn-primary'
-      ])
-    );
-  });
 });

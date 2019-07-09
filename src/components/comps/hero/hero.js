@@ -1,11 +1,11 @@
 import { mergeData } from 'vue-functional-data-merge';
-import { stringType, boolType } from '@/utils/proptypes';
+import { strType, boolType } from '@/utils/proptypes';
 import memoize from '@/utils/memoize';
 import Body from './hero-body';
 
 const cprops = memoize(() => {
   return {
-    tag: stringType('div'),
+    tag: strType('div'),
     sm: boolType(false),
     lg: boolType(false)
   };

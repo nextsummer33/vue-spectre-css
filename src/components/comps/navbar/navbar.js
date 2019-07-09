@@ -1,12 +1,12 @@
 import { mergeData } from 'vue-functional-data-merge';
-import { stringType } from '@/utils/proptypes';
+import { strType } from '@/utils/proptypes';
 import itm from './navbar-item';
 
 export default {
   name: 'SNvb',
   functional: true,
   props: {
-    tag: stringType('header')
+    tag: strType('header')
   },
   render(h, { props, data, children, slots }) {
     const s = slots();

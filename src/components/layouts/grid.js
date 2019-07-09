@@ -1,6 +1,6 @@
 import { mergeData } from 'vue-functional-data-merge';
 import memoize from '@/utils/memoize';
-import { stringType, boolType } from '@/utils/proptypes';
+import { strType, boolType } from '@/utils/proptypes';
 import { getLayout } from '@/utils/get-var';
 
 const cprops = memoize(() => {
@@ -10,7 +10,7 @@ const cprops = memoize(() => {
   }, {});
 
   return {
-    tag: stringType('div'),
+    tag: strType('div'),
     ...props
   };
 });
@@ -24,7 +24,7 @@ export default {
   },
   render(h, { props, data, children }) {
     const _class = Object.entries(props)
-      .filter(p => !p[1].length && p[1])
+      .filter(p => typeof p[1] == 'boolean' && p[1])
       .reduce((arr, p) => {
         arr.push('grid-' + p[0]);
         return arr;
