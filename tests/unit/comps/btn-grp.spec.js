@@ -16,9 +16,7 @@ describe('s-btn-grp', () => {
         block: true
       }
     });
-    expect(w2.classes()).toEqual(
-      expect.arrayContaining(['btn-group', 'btn-group-block'])
-    );
+    expect(w2.classes()).toEqual(['btn-group', 'btn-group-block']);
   });
 
   test('should render children by assigning items', () => {
@@ -39,6 +37,23 @@ describe('s-btn-grp', () => {
     expect(w.findAll(Btn).wrappers.length).toBe(2);
   });
 
+  test('should set primary, sm, lg to buttons', () => {
+    const w = mount(Group, {
+      propsData: {
+        items: ['item 1', 'item 2'],
+        primary: true,
+        sm: true,
+        lg: true
+      }
+    });
+
+    w.findAll(Btn).wrappers.forEach(s => {
+      expect(s.classes()).toEqual(
+        expect.arrayContaining(['btn-primary', 'btn-sm', 'btn-lg'])
+      );
+    });
+  });
+
   test('should change the current select by v-model', () => {
     let mv = 0;
     const w = mount(Group, {
@@ -46,25 +61,18 @@ describe('s-btn-grp', () => {
         items: ['item a', 'item b'],
         value: mv
       },
-      listeners: {
-        input: v => (mv = v)
-      }
+      listeners: { input: v => (mv = v) }
     });
     const btns = w.findAll(Btn);
-    expect(btns.at(0).classes()).toEqual(
-      expect.arrayContaining(['btn', 'active'])
-    );
+    expect(btns.at(0).classes()).toEqual(['btn', 'active']);
 
-    mv = 1;
     w.setProps({
-      value: mv
+      value: 1
     });
-    expect(btns.at(0).classes()).toEqual(expect.arrayContaining(['btn']));
-    expect(btns.at(1).classes()).toEqual(
-      expect.arrayContaining(['btn', 'active'])
-    );
+    expect(btns.at(0).classes('active')).toBeFalsy();
+    expect(btns.at(1).classes('active')).toBeTruthy();
 
-    w.find('button').trigger('click');
+    w.find(Btn).trigger('click');
     expect(mv).toBe(0);
   });
 });

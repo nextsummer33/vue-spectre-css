@@ -5,7 +5,10 @@ export default {
   name: 'SBtnGrp',
   props: {
     tag: strType('div'),
-    block: boolType(false),
+    block: boolType(),
+    primary: boolType(),
+    sm: boolType(),
+    lg: boolType(),
     items: arrType(),
     value: numType(-1)
   },
@@ -41,7 +44,12 @@ export default {
           return h(
             Btn,
             {
-              props: { active: i === vm.sel },
+              props: {
+                active: i === vm.sel,
+                sm: vm.sm,
+                lg: vm.lg,
+                primary: vm.primary
+              },
               on: { click: () => vm.select(i) }
             },
             t
