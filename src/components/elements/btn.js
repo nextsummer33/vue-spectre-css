@@ -2,16 +2,19 @@ import { mergeData } from 'vue-functional-data-merge';
 import { strType, boolType } from '@/utils/proptypes';
 import memoize from '@/utils/memoize';
 import { getButton as getBtn } from '@/utils/get-var';
+import { boolKeys } from '@/utils/object';
+import Icon from './icon';
 
 const cprops = memoize(() => {
   const { sizes, states, types, colors } = getBtn();
   const props = colors
     .concat(types, sizes, states, 'actionCircle')
-    .reduce((p, v) => (p[v] = boolType()) && p, {});
+    .reduce((p, v) => (p[v] = boolType()) && p, Object.create(null));
 
   return {
     tag: strType('button'),
-    icon: strType(''),
+    iconLeft: strType(),
+    iconRight: strType(),
     ...props
   };
 });
@@ -28,12 +31,9 @@ const btnClass = memoize(props => {
   }
 
   // handle boolean properties
-  Object.entries(cpyps)
-    .filter(p => typeof p[1] == 'boolean' && p[1])
-    .forEach(p => {
-      const v = p[0];
-      cls.push(states.includes(v) ? v : 'btn-' + v);
-    });
+  boolKeys(cpyps).forEach(v => {
+    cls.push(states.includes(v) ? v : 'btn-' + v);
+  });
 
   return cls;
 }, true);
@@ -45,14 +45,23 @@ export default {
     delete this.props;
     return (this.props = cprops());
   },
-  render(h, { props, data, children }) {
+  render(h, { props, data, slots }) {
+    // handle the icon component position
+    const icon = props.iconLeft || props.iconRight;
+    const icnVm = icon && h(Icon, { props: { icon } });
+    let child = slots.default || ['Button'];
+    child =
+      (props.iconLeft && [icnVm, ' ', ...child]) ||
+      (props.iconRight && [...child, ' ', icnVm]) ||
+      child;
+
     return h(
       props.tag,
       mergeData(data, {
         staticClass: 'btn',
         class: btnClass(props)
       }),
-      children || ['Button']
+      child
     );
   }
 };

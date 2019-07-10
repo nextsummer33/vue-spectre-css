@@ -1,9 +1,10 @@
+import memoize from '@/utils/memoize';
 import { arrayContains } from '@/utils/array';
 import { mergeData } from 'vue-functional-data-merge';
 import { getLayout } from '@/utils/get-var';
-import memoize from '@/utils/memoize';
-import { dashCase, splitCamelCase } from '@/utils/string';
-import { boolType } from '@/utils/proptypes';
+import { splitCamelCase } from '@/utils/string';
+import { boolType, strType } from '@/utils/proptypes';
+import { boolKeys, isExist } from '@/utils/object';
 
 const colRegx = /^\d*$|auto/;
 const numStrType = () => {
@@ -20,85 +21,75 @@ const numStrType = () => {
   };
 };
 
-const genProps = memoize(() => {
-  const layout = getLayout();
-  let compProps = layout.viewports.reduce((props, vp) => {
-    props[`${vp}Auto`] = props[`${vp}Show`] = props[`${vp}Hide`] = boolType();
-    props[`${vp}Col`] = numStrType();
-    return props;
+const cprops = memoize(() => {
+  const { viewports, offsets } = getLayout();
+  let props = viewports.reduce((p, vp) => {
+    p[`${vp}Auto`] = p[`${vp}Show`] = p[`${vp}Hide`] = boolType();
+    p[`${vp}Col`] = numStrType();
+    return p;
   }, Object.create(null));
 
-  compProps = layout.offsets.reduce((props, offset) => {
-    props[`${offset}Auto`] = boolType();
-    return props;
-  }, compProps);
+  props = offsets.reduce((p, v) => (p[`${v}Auto`] = boolType() && p), props);
 
-  const props = {
-    tag: {
-      type: String,
-      default: 'div'
-    },
+  return {
+    tag: strType('div'),
     col: numStrType(),
-    ...compProps
+    ...props
   };
-
-  return props;
 });
 
-const mDashCase = memoize(dashCase);
+const mclass = memoize(props => {
+  const { viewports, offsets } = getLayout();
+  const cls = [];
+  let bks = boolKeys(props);
+
+  if (props.col) {
+    cls.push('col-' + props.col);
+  }
+
+  viewports.forEach(vp => {
+    const v = props[`${vp}Col`];
+    isExist(v) && cls.push(`col-${vp}-${v || 'auto'}`);
+  });
+
+  // clean up the offset props
+  const norMlMr = k => k !== 'mlAuto' && k != 'mrAuto';
+  if (bks.indexOf('mxAuto') > -1) {
+    bks = bks.filter(norMlMr);
+  } else if (arrayContains(bks, 'mlAuto', 'mrAuto')) {
+    bks = bks.filter(norMlMr);
+    bks.push('mxAuto');
+  }
+
+  for (let i = 0; i < bks.length; i++) {
+    const k = bks[i];
+    const tokens = splitCamelCase(k);
+    if (viewports.indexOf(tokens[0]) > -1) {
+      if (tokens[1] === 'show' || tokens[1] === 'hide') {
+        cls.push(`${tokens[1]}-${tokens[0]}`);
+      } else if (tokens[1] === 'auto') {
+        cls.push(`col-${tokens[0]}-auto`);
+      }
+    } else if (offsets.indexOf(tokens[0]) > -1) {
+      cls.push(`col-${tokens[0]}-auto`);
+    }
+  }
+
+  return cls;
+}, true);
 
 export default {
   name: 'SCol',
   functional: true,
   get props() {
     delete this.props;
-    return (this.props = genProps());
+    return (this.props = cprops());
   },
   render(h, { props, data, children }) {
-    const layout = getLayout();
-    const classlist = [];
-    const entries = Object.entries(props);
-
-    if (props.col) {
-      classlist.push('col-' + props.col);
-    }
-
-    layout.viewports.forEach(vp => {
-      const val = props[`${vp}Col`];
-      if (val !== null && val !== undefined) {
-        classlist.push(`col-${vp}-${val || 'auto'}`);
-      }
-    });
-
-    let keys = entries.filter(pv => pv[1] === true).map(pv => pv[0]);
-    // clean up the offset props
-    const norMlMr = k => k !== 'mlAuto' && k != 'mrAuto';
-    if (arrayContains(keys, 'mxAuto')) {
-      keys = keys.filter(norMlMr);
-    } else if (arrayContains(keys, 'mlAuto', 'mrAuto')) {
-      keys = keys.filter(norMlMr);
-      keys.push('mxAuto');
-    }
-
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      const tokens = splitCamelCase(key);
-      if (arrayContains(layout.viewports, tokens[0])) {
-        if (tokens[1] === 'show' || tokens[1] === 'hide') {
-          classlist.push(`${tokens[1]}-${tokens[0]}`);
-        } else if (tokens[1] === 'auto') {
-          classlist.push(`col-${tokens[0]}-auto`);
-        }
-      } else if (arrayContains(layout.offsets, tokens[0])) {
-        classlist.push(`col-${tokens[0]}-auto`);
-      }
-    }
-
-    const componentData = {
-      staticClass: 'column',
-      class: classlist
-    };
-
-    return h(props.tag, mergeData(data, componentData), children);
+    return h(
+      props.tag,
+      mergeData(data, { staticClass: 'column', class: mclass(props) }),
+      children
+    );
   }
 };

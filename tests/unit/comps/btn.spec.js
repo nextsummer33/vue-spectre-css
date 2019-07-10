@@ -1,6 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import Btn from '@/components/elements/btn';
-import Vue from 'vue';
+import Icon from '@/components/elements/icon';
 
 describe('s-hero', () => {
   test('should render correctly', () => {
@@ -66,5 +66,23 @@ describe('s-hero', () => {
     expect(w2.classes()).toEqual(
       expect.arrayContaining(['btn', 'btn-action', 's-circle'])
     );
+  });
+
+  test('show icon when icon is set', () => {
+    const w = shallowMount(Btn, {
+      propsData: {
+        iconLeft: 'arrow-up'
+      }
+    });
+
+    expect(w.find(Icon).isVisible()).toBeTruthy();
+    expect(w.html().indexOf('</i> Button')).toBeGreaterThan(-1);
+
+    const w1 = shallowMount(Btn, {
+      propsData: {
+        iconRight: 'arrow-up'
+      }
+    });
+    expect(w1.html().indexOf('Button <i')).toBeGreaterThan(-1);
   });
 });

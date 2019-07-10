@@ -18,5 +18,8 @@ export default {
     types: ['link', 'action', 'clear'],
     sizes: ['sm', 'lg', 'block'],
     states: ['loading', 'active', 'disabled']
+  },
+  icon: {
+    sizes: ['2x', '3x', '4x']
   }
 };

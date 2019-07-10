@@ -14,9 +14,11 @@ const getVariable = memorize(name => {
 export const getLayout = () => getVariable('layout');
 export const getColors = () => getVariable('colors');
 export const getButton = () => getVariable('button');
+export const getIcon = () => getVariable('icon');
 
 export default {
   getLayout,
   getButton,
-  getColors
+  getColors,
+  getIcon
 };

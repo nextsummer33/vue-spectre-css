@@ -2,6 +2,7 @@ import Vue from '@/utils/vue';
 import App from './App.vue';
 import router from './router';
 import 'spectre.css';
+import 'spectre.css/dist/spectre-icons.css';
 import layouts from './components/layouts';
 import comps from './components/comps';
 import elems from './components/elements';
