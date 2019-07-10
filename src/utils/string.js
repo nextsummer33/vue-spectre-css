@@ -9,13 +9,11 @@ export const capf = s => {
 const splitRegx = /(?=[A-Z])/;
 
 export const splitCamelCase = str => {
-  const s = str.length ? str[0].toLowerCase() + str.substr(1) : str;
+  const s = str.length ? str.charAt(0).toLowerCase() + str.substr(1) : str;
   return s.split(splitRegx).map(s => s.toLowerCase());
 };
 
-export const dashCase = s => {
-  return splitCamelCase(s).join('-');
-};
+export const dashCase = s => splitCamelCase(s).join('-');
 
 export default {
   capf,

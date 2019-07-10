@@ -1,11 +1,11 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { strType, boolType } from '@/utils/proptypes';
 import memoize from '@/utils/memoize';
-import { getIcon } from '@/utils/get-var';
+import { getLabel } from '@/utils/get-var';
 import { boolKeys } from '@/utils/object';
 
 const cprops = memoize(() => {
-  const { colors, shapes } = getIcon();
+  const { colors, shapes } = getLabel();
   const props = colors
     .concat(shapes)
     .reduce((p, v) => (p[v] = boolType()) && p, Object.create(null));

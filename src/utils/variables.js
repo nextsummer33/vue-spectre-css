@@ -25,5 +25,12 @@ export default {
   label: {
     colors: ['primary', 'secondary', 'success', 'warning', 'error'],
     shapes: ['rounded']
+  },
+  image: {
+    fits: ['contain', 'cover'],
+    alignments: ['left', 'center', 'right']
+  },
+  video: {
+    ratios: ['1-1', '4-3']
   }
 };

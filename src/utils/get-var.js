@@ -16,11 +16,15 @@ export const getColors = () => getVariable('colors');
 export const getButton = () => getVariable('button');
 export const getIcon = () => getVariable('icon');
 export const getLabel = () => getVariable('label');
+export const getImage = () => getVariable('image');
+export const getVideo = () => getVariable('video');
 
 export default {
   getLayout,
   getButton,
   getColors,
   getIcon,
-  getLabel
+  getLabel,
+  getImage,
+  getVideo
 };

@@ -6,16 +6,11 @@ export const hash = s => {
 };
 
 export const memoize = (fn, hashable) => {
-  if (!fn.__cache__) {
-    Object.assign(fn, {
-      __cache__: Object.create(null)
-    });
-  }
-
+  !fn.__cache && (fn.__cache = Object.create(null));
   return (...args) => {
     const j = JSON.stringify(args);
-    const k = !hashable ? j : hash(j);
-    return (fn.__cache__[k] = fn.__cache__[k] || fn.apply(null, args));
+    const k = hashable ? hash(j) : j;
+    return (fn.__cache[k] = fn.__cache[k] || fn.apply(null, args));
   };
 };
 

@@ -45,11 +45,11 @@ export default {
     delete this.props;
     return (this.props = cprops());
   },
-  render(h, { props, data, slots }) {
+  render(h, { props, data, children }) {
     // handle the icon component position
     const icon = props.iconLeft || props.iconRight;
     const icnVm = icon && h(Icon, { props: { icon } });
-    let child = slots.default || ['Button'];
+    let child = children || ['Button'];
     child =
       (props.iconLeft && [icnVm, ' ', ...child]) ||
       (props.iconRight && [...child, ' ', icnVm]) ||
