@@ -19,7 +19,7 @@ const cprops = memoize(() => {
   };
 });
 
-const btnClass = memoize(props => {
+const mclass = memoize(props => {
   const { states } = getBtn();
   const cpyps = Object.assign({}, props);
   const cls = [];
@@ -59,7 +59,7 @@ export default {
       props.tag,
       mergeData(data, {
         staticClass: 'btn',
-        class: btnClass(props)
+        class: mclass(props)
       }),
       child
     );

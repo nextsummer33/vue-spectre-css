@@ -21,5 +21,9 @@ export default {
   },
   icon: {
     sizes: ['2x', '3x', '4x']
+  },
+  label: {
+    colors: ['primary', 'secondary', 'success', 'warning', 'error'],
+    shapes: ['rounded']
   }
 };

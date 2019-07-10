@@ -5,28 +5,24 @@ import { getIcon } from '@/utils/get-var';
 import { boolKeys } from '@/utils/object';
 
 const cprops = memoize(() => {
-  const { sizes } = getIcon();
-  const props = sizes.reduce(
-    (p, v) => (p[v] = boolType()) && p,
-    Object.create(null)
-  );
+  const { colors, shapes } = getIcon();
+  const props = colors
+    .concat(shapes)
+    .reduce((p, v) => (p[v] = boolType()) && p, Object.create(null));
 
   return {
-    tag: strType('i'),
-    icon: strType(),
-    font: strType(),
+    tag: strType('span'),
     ...props
   };
 });
 
 const mclass = memoize(props => {
-  const cls = boolKeys(props).map(v => 'icon-' + v);
-  props.icon && cls.push('icon-' + props.icon);
+  const cls = boolKeys(props).map(v => 'label-' + v);
   return cls;
 }, true);
 
 export default {
-  name: 'SIcon',
+  name: 'SLabel',
   functional: true,
   get props() {
     delete this.props;
@@ -36,9 +32,8 @@ export default {
     return h(
       props.tag,
       mergeData(data, {
-        staticClass: 'icon',
-        class: mclass(props),
-        style: props.font && { 'font-size': props.font + 'px' }
+        staticClass: 'label',
+        class: mclass(props)
       }),
       children
     );

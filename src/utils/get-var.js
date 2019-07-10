@@ -1,12 +1,12 @@
 import memorize from './memoize';
-import variables from './variables';
+import vars from './variables';
 
 const getVariable = memorize(name => {
-  const variable = variables[name] || {};
-  if (Array.isArray(variable)) {
-    return [...variable];
-  } else if (Object.getOwnPropertyNames(variable).length > 0) {
-    return Object.assign({}, variable);
+  const v = vars[name] || {};
+  if (Array.isArray(v)) {
+    return [...v];
+  } else if (Object.getOwnPropertyNames(v).length > 0) {
+    return Object.assign({}, v);
   }
   return {};
 });
@@ -15,10 +15,12 @@ export const getLayout = () => getVariable('layout');
 export const getColors = () => getVariable('colors');
 export const getButton = () => getVariable('button');
 export const getIcon = () => getVariable('icon');
+export const getLabel = () => getVariable('label');
 
 export default {
   getLayout,
   getButton,
   getColors,
-  getIcon
+  getIcon,
+  getLabel
 };
