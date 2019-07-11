@@ -28,7 +28,7 @@ export default {
   },
   image: {
     fits: ['contain', 'cover'],
-    alignments: ['left', 'center', 'right']
+    aligns: ['left', 'center', 'right']
   },
   video: {
     ratios: ['1-1', '4-3']

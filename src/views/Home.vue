@@ -15,6 +15,7 @@
       v-bind="{ ...alignment }"
       figure
     />
+    <s-video src="https://www.youtube.com/embed/7DbslbKsQSk" width="300" height="200" iframe allowfullscreen />
   </div>
 </template>
 
