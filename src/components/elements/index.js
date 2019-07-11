@@ -4,6 +4,7 @@ import Icon from './icon';
 import Label from './label';
 import Img from './img';
 import Video from './video';
+import Lang from './lang';
 
 export const SBtn = Btn;
 export const SBtnGrp = BtnGrp;
@@ -11,6 +12,7 @@ export const SIcon = Icon;
 export const SLabel = Label;
 export const SImg = Img;
 export const SVideo = Video;
+export const SLang = Lang;
 
 export default {
   install(Vue) {
@@ -20,5 +22,6 @@ export default {
     Vue.component('s-label', SLabel);
     Vue.component('s-img', SImg);
     Vue.component('s-video', SVideo);
+    Vue.component('s-lang', SLang);
   }
 };

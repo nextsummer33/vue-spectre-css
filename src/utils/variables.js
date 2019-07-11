@@ -32,5 +32,8 @@ export default {
   },
   video: {
     ratios: ['1-1', '4-3']
+  },
+  lang: {
+    kinds: ['zh', 'zhHans', 'zhHant', 'ja', 'ko']
   }
 };

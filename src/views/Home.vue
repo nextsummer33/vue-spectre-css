@@ -1,21 +1,5 @@
 <template>
   <div>
-    <input type="number" v-model="size" />
-    <s-btn>sdfsdfs</s-btn>
-    <s-btn-grp :items="['left', 'center', 'right']" v-model="align" />
-    <br />
-    <br />
-    <br />
-    <br />
-    <s-img
-      v-for="(img, i) in nsize"
-      :key="i"
-      src="https://picturepan2.github.io/spectre/img/osx-yosemite-2.jpg"
-      caption="Hello World"
-      v-bind="{ ...alignment }"
-      figure
-    />
-    <s-video src="https://www.youtube.com/embed/7DbslbKsQSk" width="300" height="200" iframe allowfullscreen />
   </div>
 </template>
 
