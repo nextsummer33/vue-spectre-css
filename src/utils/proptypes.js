@@ -29,9 +29,18 @@ export function numType(val = 0, validator = undefined) {
     validator
   };
 }
+
+export function strArrType(val = [], validator = undefined) {
+  return {
+    type: [String, Array],
+    default: val,
+    validator
+  };
+}
 export default {
   boolType,
   strType,
   arrType,
-  numType
+  numType,
+  strArrType
 };

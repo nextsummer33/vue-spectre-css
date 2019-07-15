@@ -5,6 +5,8 @@ import Label from './label';
 import Img from './img';
 import Video from './video';
 import Lang from './lang';
+import Input from './input';
+import Select from './select';
 
 export const SBtn = Btn;
 export const SBtnGrp = BtnGrp;
@@ -13,6 +15,8 @@ export const SLabel = Label;
 export const SImg = Img;
 export const SVideo = Video;
 export const SLang = Lang;
+export const SInput = Input;
+export const SSelect = Select;
 
 export default {
   install(Vue) {
@@ -23,5 +27,7 @@ export default {
     Vue.component('s-img', SImg);
     Vue.component('s-video', SVideo);
     Vue.component('s-lang', SLang);
+    Vue.component('s-input', SInput);
+    Vue.component('s-select', SSelect);
   }
 };

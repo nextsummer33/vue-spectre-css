@@ -35,5 +35,10 @@ export default {
   },
   lang: {
     kinds: ['zh', 'zhHans', 'zhHant', 'ja', 'ko']
+  },
+  input: {
+    sizes: ['sm', 'lg'],
+    colors: ['success', 'warning', 'error'],
+    states: ['loading']
   }
 };

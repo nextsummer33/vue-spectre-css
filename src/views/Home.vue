@@ -1,6 +1,22 @@
 <template>
-  <div>
-  </div>
+  <s-grid>
+    <s-input v-model="v" sm />
+    <s-input tag="textarea" v-model="v" sm />
+    <s-input tag="textarea" v-model="v" />
+    <s-input tag="textarea" v-model="v" lg error />
+    <s-input v-model="v" icon-right="arrow-up" />
+    <s-input v-model="v" icon-left="arrow-up" />
+    <s-input v-model="v" loading />
+    <s-select v-model="v2" multiple :items="[{text:'Apple', value: 'apple'}, {text:'Orange', value: 'orange'}]" />
+    <s-select v-model="v" :items="[{text:'Apple', value: 'apple'}, {text:'Orange', value: 'orange'}]" />
+    <select v-model="selected" multiple @change="test2">
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+    <br>
+    <span>Selected: {{ selected }}</span>
+  </s-grid>
 </template>
 
 <script>
@@ -9,7 +25,12 @@ export default {
   data() {
     return {
       size: '5',
-      align: 0
+      align: 0,
+      loading: true,
+      v: '',
+      vs: [],
+      v2: [],
+      selected: []
     };
   },
   computed: {
@@ -24,6 +45,13 @@ export default {
       };
     }
   },
-  methods: {}
+  methods: {
+    test(ev) {
+      this.v = ev.target.value;
+    },
+    test2(ev) {
+      console.log(ev);
+    }
+  }
 };
 </script>

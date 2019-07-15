@@ -19,6 +19,7 @@ export const getLabel = () => getVariable('label');
 export const getImage = () => getVariable('image');
 export const getVideo = () => getVariable('video');
 export const getLang = () => getVariable('lang');
+export const getInput = () => getVariable('input');
 
 export default {
   getLayout,
@@ -28,5 +29,6 @@ export default {
   getLabel,
   getImage,
   getVideo,
-  getLang
+  getLang,
+  getInput
 };
