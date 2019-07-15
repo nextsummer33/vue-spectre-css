@@ -86,15 +86,10 @@ describe('s-select', () => {
       })
     );
 
-    w.findAll('option')
-      .at(0)
-      .trigger('click');
-    w.findAll('option')
-      .at(2)
-      .trigger('click');
-
-    w.find(Select).trigger('change');
-    // expect(w.vm.$data.v).toEqual(['1', '3']);
+    w.findAll('option').at(0).element.selected = true;
+    w.findAll('option').at(2).element.selected = true;
+    w.find('select').trigger('change');
+    expect(w.vm.$data.v).toEqual(['1', '3']);
   });
 
   test('listen on input event and update the value', () => {

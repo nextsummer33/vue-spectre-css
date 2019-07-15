@@ -1,5 +1,5 @@
 import memoize from '@/utils/memoize';
-import { arrayContains } from '@/utils/array';
+import { contains } from '@/utils/array';
 import { mergeData } from 'vue-functional-data-merge';
 import { getLayout } from '@/utils/get-var';
 import { splitCamelCase } from '@/utils/string';
@@ -56,7 +56,7 @@ const mclass = memoize(props => {
   const norMlMr = k => k !== 'mlAuto' && k != 'mrAuto';
   if (bks.indexOf('mxAuto') > -1) {
     bks = bks.filter(norMlMr);
-  } else if (arrayContains(bks, 'mlAuto', 'mrAuto')) {
+  } else if (contains(bks, 'mlAuto', 'mrAuto')) {
     bks = bks.filter(norMlMr);
     bks.push('mxAuto');
   }

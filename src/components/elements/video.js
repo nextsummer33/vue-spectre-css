@@ -1,7 +1,7 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { strType, boolType } from '@/utils/proptypes';
 import { getVideo } from '@/utils/get-var';
-import { arrayContains } from '@/utils/array';
+import { contains } from '@/utils/array';
 
 export default {
   name: 'SVideo',
@@ -13,7 +13,7 @@ export default {
   render(h, { props, data, children }) {
     const staticClass = 'video-responsive';
     const cls =
-      props.ratio && arrayContains(getVideo().ratios, props.ratio)
+      props.ratio && contains(getVideo().ratios, props.ratio)
         ? [staticClass + '-' + props.ratio]
         : [];
     const vdata = { staticClass, class: cls };

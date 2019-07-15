@@ -1,4 +1,4 @@
-export const arrayContains = (arr, ...items) => {
+export const contains = (arr, ...items) => {
   for (const item of items) {
     if (arr.indexOf(item) === -1) {
       return false;
@@ -8,5 +8,5 @@ export const arrayContains = (arr, ...items) => {
 };
 
 export default {
-  arrayContains
+  contains
 };

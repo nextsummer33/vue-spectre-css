@@ -3,7 +3,7 @@ import { strType, boolType } from '@/utils/proptypes';
 import memoize from '@/utils/memoize';
 import { getInput } from '@/utils/get-var';
 import { boolKeys } from '@/utils/object';
-import { arrayContains } from '@/utils/array';
+import { contains } from '@/utils/array';
 import Icon from './icon';
 
 const cprops = memoize(() => {
@@ -40,9 +40,9 @@ export default {
 
     const cls = [];
     // for (const p in boolKeys(this)) {
-    //   if (arrayContains(colors, p)) {
+    //   if (contains(colors, p)) {
     //     cls.push('is-' + p);
-    //   } else if (arrayContains(sizes, p)) {
+    //   } else if (contains(sizes, p)) {
     //     cls.push('input-' + p);
     //   }
     // }

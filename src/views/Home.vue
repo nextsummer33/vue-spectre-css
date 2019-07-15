@@ -1,20 +1,17 @@
 <template>
   <s-grid>
-    <s-input v-model="v" sm />
-    <s-input tag="textarea" v-model="v" sm />
-    <s-input tag="textarea" v-model="v" />
-    <s-input tag="textarea" v-model="v" lg error />
-    <s-input v-model="v" icon-right="arrow-up" />
-    <s-input v-model="v" icon-left="arrow-up" />
-    <s-input v-model="v" loading />
-    <s-select v-model="v2" multiple :items="[{text:'Apple', value: 'apple'}, {text:'Orange', value: 'orange'}]" />
-    <s-select v-model="v" :items="[{text:'Apple', value: 'apple'}, {text:'Orange', value: 'orange'}]" />
-    <select v-model="selected" multiple @change="test2">
-      <option>A</option>
-      <option>B</option>
-      <option>C</option>
-    </select>
-    <br>
+    <s-select
+      placeholder="Please selecte a value"
+      v-model="selected"
+      :items="items"
+      multiple
+    />
+    <p>Selected: {{selected}}</p>
+    <s-select
+      placeholder="Please select a value"
+      v-model="v"
+      :items="items"
+    />
     <span>Selected: {{ selected }}</span>
   </s-grid>
 </template>
@@ -24,6 +21,13 @@ export default {
   name: 'home',
   data() {
     return {
+      items: [
+        { text: 'One', value: '1' },
+        { text: 'Two', value: '2' },
+        { text: 'Three', value: '3' },
+        { text: 'Four', value: '4' },
+        { text: 'Five', value: '5' }
+      ],
       size: '5',
       align: 0,
       loading: true,
