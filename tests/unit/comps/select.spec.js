@@ -90,6 +90,29 @@ describe('s-select', () => {
     w.findAll('option').at(2).element.selected = true;
     w.find('select').trigger('change');
     expect(w.vm.$data.v).toEqual(['1', '3']);
+
+    const w1 = mount(
+      Vue.extend({
+        components: { SSelect: Select },
+        template: `
+          <s-select multiple v-model="v">
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </s-select>
+        `,
+        data() {
+          return {
+            v: []
+          };
+        }
+      })
+    );
+
+    w1.findAll('option').at(1).element.selected = true;
+    w1.findAll('option').at(2).element.selected = true;
+    w1.find('select').trigger('change');
+    expect(w1.vm.$data.v).toEqual(['2', '3']);
   });
 
   test('listen on input event and update the value', () => {
@@ -112,29 +135,23 @@ describe('s-select', () => {
     expect(v).toBe('2');
   });
 
-  test('show success, warning, erorr', () => {
+  test('should show success, warning, error', () => {
+    const colors = ['success', 'warning', 'error'];
     const w = shallowMount(Select, {
-      propsData: {
-        success: true,
-        warning: true,
-        error: true
-      }
+      propsData: colors.reduce((p, v) => (p[v] = true) && p, {})
     });
-
     expect(w.classes()).toEqual(
-      expect.arrayContaining(['is-success', 'is-warning', 'is-error'])
+      expect.arrayContaining(colors.map(v => 'is-' + v))
     );
   });
 
-  test('allow to resize select input', () => {
+  test('should be resized by setting sm, lg', () => {
+    const sizes = ['sm', 'lg'];
     const w = shallowMount(Select, {
-      propsData: {
-        sm: true,
-        lg: true
-      }
+      propsData: sizes.reduce((p, v) => (p[v] = true) && p, {})
     });
     expect(w.classes()).toEqual(
-      expect.arrayContaining(['select-sm', 'select-lg'])
+      expect.arrayContaining(sizes.map(v => 'select-' + v))
     );
   });
 });

@@ -1,12 +1,17 @@
+import { arrType, strType, strArrType } from '@/utils/proptypes';
+import { contains } from '@/utils/array';
+import { isExist, isObj, isStr } from '@/utils/object';
 import { mergeData } from 'vue-functional-data-merge';
 import mixins, { colorData, sizeData } from '../mixins/input';
-import { arrType, strType, strArrType } from '@/utils/proptypes';
-import { isExist, isObj, isStr } from '@/utils/object';
-import { contains } from '@/utils/array';
 
 export default {
+  name: 'SSelect',
   functional: true,
   mixins,
+  model: {
+    props: 'value',
+    event: 'change'
+  },
   props: {
     items: arrType(),
     placeholder: strType(),
@@ -19,7 +24,7 @@ export default {
     const _v = multi ? (isObj(value) ? value : []) : isStr(value) ? value : '';
     // callback value handling
     if (data.model) {
-      const cb = listeners.input || listeners.change;
+      const cb = listeners.change;
       const change = ({ target }) =>
         multi
           ? cb(children.filter(op => op.elm.selected).map(op => op.elm.value))

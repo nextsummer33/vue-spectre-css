@@ -7,6 +7,8 @@ import Video from './video';
 import Lang from './lang';
 import Input from './input';
 import Select from './select';
+import Radio from './radio';
+import Checkbox from './checkbox';
 
 export const SBtn = Btn;
 export const SBtnGrp = BtnGrp;
@@ -17,6 +19,8 @@ export const SVideo = Video;
 export const SLang = Lang;
 export const SInput = Input;
 export const SSelect = Select;
+export const SRadio = Radio;
+export const SCheckbox = Checkbox;
 
 export default {
   install(Vue) {
@@ -29,5 +33,7 @@ export default {
     Vue.component('s-lang', SLang);
     Vue.component('s-input', SInput);
     Vue.component('s-select', SSelect);
+    Vue.component('s-radio', SRadio);
+    Vue.component('s-checkbox', SCheckbox);
   }
 };

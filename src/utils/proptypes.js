@@ -1,46 +1,65 @@
-export function boolType(val = false, validator = undefined) {
+export function boolType(v = false, validator = undefined) {
   return {
     type: Boolean,
-    default: val,
+    default: v,
     validator
   };
 }
 
-export function strType(val = null, validator = undefined) {
+export function strType(v = null, validator = undefined) {
   return {
     type: String,
-    default: val,
+    default: v,
     validator
   };
 }
 
-export function arrType(val = [], validator = undefined) {
+export function arrType(v = [], validator = undefined) {
   return {
     type: Array,
-    default: () => val,
+    default: () => v,
     validator
   };
 }
 
-export function numType(val = 0, validator = undefined) {
+export function numType(v = 0, validator = undefined) {
   return {
     type: Number,
-    default: val,
+    default: v,
     validator
   };
 }
 
-export function strArrType(val = [], validator = undefined) {
+export function strArrType(v = [], validator = undefined) {
   return {
     type: [String, Array],
-    default: val,
+    default: v,
     validator
   };
 }
+
+export function numStrBoolType(v = false, validator = undefined) {
+  return {
+    type: [Number, String, Boolean],
+    default: v,
+    validator
+  };
+}
+
+export function allType(v = null, validator = undefined) {
+  return {
+    type: [Array, Number, String, Boolean],
+    default: v,
+    validator
+  };
+}
+
 export default {
   boolType,
   strType,
   arrType,
   numType,
-  strArrType
+  strArrType,
+  numStrBoolType,
+  allType
 };

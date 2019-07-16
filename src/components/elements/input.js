@@ -5,6 +5,7 @@ import Icon from './icon';
 
 export default {
   functional: true,
+  inheritAttrs: false,
   mixins,
   props: {
     tag: strType('input'),
@@ -22,7 +23,7 @@ export default {
       (loading && h('i', { staticClass: 'form-icon loading' }));
 
     if (data.model) {
-      const cb = data.on.input;
+      const cb = listeners.input;
       data.on.input = ev => cb(ev.target.value);
     }
 
@@ -31,8 +32,7 @@ export default {
       mergeData(data, colorData('is', props), sizeData('input', props), {
         staticClass: 'form-input',
         attrs: { type: data.attrs.type || 'text' },
-        domProps: { value },
-        on: listeners
+        domProps: { value }
       }),
       children
     );
