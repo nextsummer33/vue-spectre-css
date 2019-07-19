@@ -20,7 +20,8 @@ export default {
   },
   render(h, { props, data, children, listeners }) {
     const { tag, placeholder, items, value } = props;
-    const multi = isExist(data.attrs.multiple);
+    const attrs = (data && data.attrs) || {};
+    const multi = isExist(attrs.multiple);
     // props value fixed based on multiple or single selection mode
     const _v = multi ? (isObj(value) ? value : []) : isStr(value) ? value : '';
     // callback value handling

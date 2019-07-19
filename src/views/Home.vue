@@ -9,7 +9,7 @@
       <s-input placeholder="name" />
     </s-form-grp>
 
-    <s-form horizontal disabled>
+    <s-form horizontal>
       <s-form-grp
         type="email"
         title="Email Address"
@@ -32,9 +32,10 @@
           <option>Four</option>
         </template>
       </s-form-grp>
+      <s-form-grp :items="[{text: 'One', value: '1'}]" select title="Single" />
       {{ mchecked }}
       <s-form-grp lhs="3" rhs="9" title="Username">
-        <s-input slot="input" placeholder="hello" />
+          <s-input slot="input" type="email" placeholder="hello" />
       </s-form-grp>
       <s-form-grp lhs="3" rhs="9" title="Gender" hint="select a gender">
         <template v-slot:input>

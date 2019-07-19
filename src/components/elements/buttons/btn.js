@@ -19,7 +19,7 @@ const cprops = memoize(() => {
   };
 });
 
-const mclass = memoize(props => {
+const mclass = props => {
   const { states } = getBtn();
   const cpyps = Object.assign({}, props);
   const cls = [];
@@ -36,7 +36,7 @@ const mclass = memoize(props => {
   });
 
   return cls;
-}, true);
+};
 
 export default {
   name: 'SBtn',

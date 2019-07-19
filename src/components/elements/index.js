@@ -26,20 +26,20 @@ export const SForm = Form;
 
 export default {
   install(Vue) {
-    Vue.component('s-btn', SBtn);
     Vue.component('s-btn-grp', SBtnGrp);
-    Vue.component('s-icon', SIcon);
-    Vue.component('s-label', SLabel);
-    Vue.component('s-img', SImg);
-    Vue.component('s-video', SVideo);
-    Vue.component('s-lang', SLang);
-    Vue.component('s-input', SInput);
-    Vue.component('s-select', SSelect);
-    Vue.component('s-radio', SRadio);
+    Vue.component('s-btn', SBtn);
     Vue.component('s-checkbox', SCheckbox);
     Vue.component('s-form-grp', SFormGrp);
-    Vue.component('s-form-label', SFormLabel);
     Vue.component('s-form-hint', SFormHint);
+    Vue.component('s-form-label', SFormLabel);
     Vue.component('s-form', SForm);
+    Vue.component('s-icon', SIcon);
+    Vue.component('s-img', SImg);
+    Vue.component('s-input', SInput);
+    Vue.component('s-label', SLabel);
+    Vue.component('s-lang', SLang);
+    Vue.component('s-radio', SRadio);
+    Vue.component('s-select', SSelect);
+    Vue.component('s-video', SVideo);
   }
 };

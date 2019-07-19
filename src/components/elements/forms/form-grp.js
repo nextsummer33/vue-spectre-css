@@ -54,7 +54,7 @@ function render(h, { props, data, slots, children }) {
       (props.radio && Radio) ||
       (props.checkbox && Checkbox) ||
       Input;
-    return slotEls.input || h(el, data, slotEls.select || []);
+    return slotEls.input || h(el, data, slotEls.select);
   };
 
   const els = slotEls.default || [

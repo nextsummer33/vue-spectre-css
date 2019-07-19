@@ -1,12 +1,12 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { strType, boolType } from '@/utils/proptypes';
-import mixins, { colorData, sizeData } from '@/components/mixins';
+import { Color, Size, colorData, sizeData } from '@/components/mixins';
 import Icon from '../icon';
 
 export default {
   functional: true,
   inheritAttrs: false,
-  mixins,
+  mixins: [Color, Size],
   props: {
     tag: strType('input'),
     value: strType(''),
@@ -14,7 +14,7 @@ export default {
     iconRight: strType(),
     loading: boolType()
   },
-  render(h, { props, data, children, listeners }) {
+  render(h, { props, data, listeners }) {
     const { tag, iconLeft, iconRight, loading, value } = props;
     const attrs = (data && data.attrs) || {};
     const icn = icon => h(Icon, { class: 'form-icon', props: { icon } });
@@ -28,25 +28,24 @@ export default {
         cb(ev.target.value);
       };
     }
-    let vm = h(
+    let el = h(
       tag,
       mergeData(data, colorData('is', props), sizeData('input', props), {
         staticClass: 'form-input',
         attrs: { type: tag === 'input' ? attrs.type || 'text' : undefined },
         domProps: { value }
-      }),
-      children
+      })
     );
 
-    vm =
+    el =
       lIcn || rIcn
         ? h(
             'div',
             { staticClass: 'has-icon-' + (lIcn ? 'left' : 'right') },
-            lIcn ? [lIcn, vm] : [vm, rIcn]
+            lIcn ? [lIcn, el] : [el, rIcn]
           )
-        : vm;
+        : el;
 
-    return vm;
+    return el;
   }
 };

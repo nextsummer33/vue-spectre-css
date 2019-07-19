@@ -38,8 +38,7 @@ export default {
   },
   input: {
     sizes: ['sm', 'lg'],
-    colors: ['success', 'warning', 'error'],
-    states: ['loading']
+    colors: ['success', 'warning', 'error']
   },
   form: {
     types: ['textarea', 'checkbox', 'radio', 'select']
