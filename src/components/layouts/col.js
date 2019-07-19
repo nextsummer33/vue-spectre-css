@@ -34,11 +34,12 @@ const cprops = memoize(() => {
   return {
     tag: strType('div'),
     col: numStrType(),
+    noColumn: boolType(),
     ...props
   };
 });
 
-const mclass = memoize(props => {
+const mclass = props => {
   const { viewports, offsets } = getLayout();
   const cls = [];
   let bks = boolKeys(props);
@@ -76,7 +77,7 @@ const mclass = memoize(props => {
   }
 
   return cls;
-}, true);
+};
 
 export default {
   name: 'SCol',
@@ -88,7 +89,10 @@ export default {
   render(h, { props, data, children }) {
     return h(
       props.tag,
-      mergeData(data, { staticClass: 'column', class: mclass(props) }),
+      mergeData(data, {
+        staticClass: props.noColumn ? '' : 'column',
+        class: mclass(props)
+      }),
       children
     );
   }

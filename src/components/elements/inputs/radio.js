@@ -1,6 +1,6 @@
 import { strType, numStrBoolType } from '@/utils/proptypes';
 import { mergeData } from 'vue-functional-data-merge';
-import mixins, { colorData, sizeData } from '../mixins/input';
+import mixins, { colorData, sizeData, inlineData } from '@/components/mixins';
 
 export default {
   name: 'SRadio',
@@ -8,6 +8,7 @@ export default {
   inheritAttrs: false,
   mixins,
   props: {
+    tag: strType('input'),
     checked: numStrBoolType('off'),
     value: numStrBoolType('on'),
     label: strType('Label')
@@ -17,7 +18,7 @@ export default {
     event: 'change'
   },
   render(h, { props, data, listeners }) {
-    let { checked, value } = props;
+    let { checked, value, tag } = props;
     checked = checked || 'on';
     // callback value handling
     if (data.model) {
@@ -28,7 +29,7 @@ export default {
     }
     // update the children dom props based on input value
     const inputVm = h(
-      'input',
+      tag,
       mergeData(data, {
         attrs: { type: 'radio' },
         domProps: { checked: checked === value }
@@ -37,9 +38,12 @@ export default {
     const iconVm = h('i', { staticClass: 'form-icon' });
     return h(
       'label',
-      mergeData(colorData('is', props), sizeData('input', props), {
-        staticClass: 'form-radio'
-      }),
+      mergeData(
+        inlineData(props),
+        colorData('is', props),
+        sizeData('input', props),
+        { staticClass: 'form-radio' }
+      ),
       [inputVm, iconVm, ' ' + props.label]
     );
   }

@@ -1,6 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import Btn from '@/components/elements/btn';
-import Icon from '@/components/elements/icon';
+import { SBtn as Btn, SIcon as Icon } from '@/components/elements';
 
 describe('s-hero', () => {
   test('should render correctly', () => {

@@ -1,11 +1,12 @@
 import { boolType, numStrBoolType, allType, strType } from '@/utils/proptypes';
 import { mergeData } from 'vue-functional-data-merge';
-import mixins, { colorData, sizeData } from '../mixins/input';
+import mixins, { colorData, sizeData, inlineData } from '@/components/mixins';
 import { isExist, isObj } from '@/utils/object';
 import memoize from '@/utils/memoize';
 
 const cprops = memoize(() => {
   return {
+    tag: strType('input'),
     checked: allType(false),
     falseValue: numStrBoolType(null),
     indeterminate: boolType(),
@@ -17,7 +18,7 @@ const cprops = memoize(() => {
 });
 
 function render(h, { props, data, listeners }) {
-  const { checked, value, trueValue, falseValue } = props;
+  const { tag, checked, value, trueValue, falseValue } = props;
   const tv = isExist(trueValue) ? trueValue : value;
   const fv = isExist(falseValue) ? falseValue : false;
   const isChk = checked === tv;
@@ -43,7 +44,7 @@ function render(h, { props, data, listeners }) {
   }
 
   const inputVm = h(
-    'input',
+    tag,
     mergeData(data, {
       attrs: { type: 'checkbox' },
       domProps: {
@@ -55,9 +56,12 @@ function render(h, { props, data, listeners }) {
   const iconVm = h('i', { staticClass: 'form-icon' });
   return h(
     'label',
-    mergeData(colorData('is', props), sizeData('input', props), {
-      staticClass: props.switch ? 'form-switch' : 'form-checkbox'
-    }),
+    mergeData(
+      inlineData(props),
+      colorData('is', props),
+      sizeData('input', props),
+      { staticClass: props.switch ? 'form-switch' : 'form-checkbox' }
+    ),
     [inputVm, iconVm, ' ' + props.label]
   );
 }

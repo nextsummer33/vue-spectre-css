@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import Video from '@/components/elements/video';
+import { SVideo as Video } from '@/components/elements';
 
 describe('s-video', () => {
   test('should render as a video dom', () => {

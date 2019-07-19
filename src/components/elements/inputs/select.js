@@ -2,23 +2,24 @@ import { arrType, strType, strArrType } from '@/utils/proptypes';
 import { contains } from '@/utils/array';
 import { isExist, isObj, isStr } from '@/utils/object';
 import { mergeData } from 'vue-functional-data-merge';
-import mixins, { colorData, sizeData } from '../mixins/input';
+import { Color, Size, colorData, sizeData } from '@/components/mixins';
 
 export default {
   name: 'SSelect',
   functional: true,
-  mixins,
+  mixins: [Color, Size],
   model: {
     props: 'value',
     event: 'change'
   },
   props: {
+    tag: strType('select'),
     items: arrType(),
     placeholder: strType(),
     value: strArrType(() => [])
   },
   render(h, { props, data, children, listeners }) {
-    const { placeholder, items, value } = props;
+    const { tag, placeholder, items, value } = props;
     const multi = isExist(data.attrs.multiple);
     // props value fixed based on multiple or single selection mode
     const _v = multi ? (isObj(value) ? value : []) : isStr(value) ? value : '';
@@ -39,7 +40,7 @@ export default {
     children = children || items.map(i => opEl(i.text, i.value));
 
     return h(
-      'select',
+      tag,
       mergeData(data, colorData('is', props), sizeData('select', props), {
         staticClass: 'form-select',
         domProps: multi ? {} : { value: _v }

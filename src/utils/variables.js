@@ -40,5 +40,8 @@ export default {
     sizes: ['sm', 'lg'],
     colors: ['success', 'warning', 'error'],
     states: ['loading']
+  },
+  form: {
+    types: ['textarea', 'checkbox', 'radio', 'select']
   }
 };

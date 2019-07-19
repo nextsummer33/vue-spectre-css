@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import Checkbox from '@/components/elements/checkbox';
+import { SCheckbox as Checkbox } from '@/components/elements';
 import Vue from 'vue';
 
 describe('s-checkbox', () => {
@@ -108,7 +108,12 @@ describe('s-checkbox', () => {
     w.find('input').trigger('change');
     expect(v).toBe(false);
   });
-
+  test('added form-inline', () => {
+    const w = shallowMount(Checkbox, {
+      propsData: { inline: true }
+    });
+    expect(w.classes('form-inline')).toBeTruthy();
+  });
   test('should show success, warning, error', () => {
     const colors = ['success', 'warning', 'error'];
     const w = shallowMount(Checkbox, {

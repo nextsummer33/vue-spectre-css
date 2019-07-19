@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import Select from '@/components/elements/select';
+import { SSelect as Select } from '@/components/elements';
 import Vue from 'vue';
 
 describe('s-select', () => {

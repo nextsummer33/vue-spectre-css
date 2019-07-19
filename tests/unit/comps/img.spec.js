@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import Img from '@/components/elements/img';
+import { SImg as Img } from '@/components/elements';
 
 describe('s-img', () => {
   test('should render a img', () => {

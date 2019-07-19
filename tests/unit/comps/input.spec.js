@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import Input from '@/components/elements/input';
+import { SInput as Input } from '@/components/elements';
 import Icon from '@/components/elements/icon';
 import Vue from 'vue';
 

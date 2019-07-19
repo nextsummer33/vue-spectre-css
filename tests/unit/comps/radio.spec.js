@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import Radio from '@/components/elements/radio';
+import { SRadio as Radio } from '@/components/elements';
 import Vue from 'vue';
 
 describe('s-radio', () => {
@@ -46,6 +46,13 @@ describe('s-radio', () => {
     });
     w.find('input').trigger('change');
     expect(v).toBe('on');
+  });
+
+  test('added form-inline', () => {
+    const w = shallowMount(Radio, {
+      propsData: { inline: true }
+    });
+    expect(w.classes('form-inline')).toBeTruthy();
   });
 
   test('should show success, warning, error', () => {

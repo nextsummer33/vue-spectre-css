@@ -3,7 +3,7 @@ import { strType, boolType } from '@/utils/proptypes';
 import memoize from '@/utils/memoize';
 import { getButton as getBtn } from '@/utils/get-var';
 import { boolKeys } from '@/utils/object';
-import Icon from './icon';
+import Icon from '../icon';
 
 const cprops = memoize(() => {
   const { sizes, states, types, colors } = getBtn();

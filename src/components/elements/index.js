@@ -1,14 +1,12 @@
-import Btn from './btn';
-import BtnGrp from './btn-grp';
 import Icon from './icon';
 import Label from './label';
-import Img from './img';
-import Video from './video';
 import Lang from './lang';
-import Input from './input';
-import Select from './select';
-import Radio from './radio';
-import Checkbox from './checkbox';
+import Btn from './buttons/btn';
+import BtnGrp from './buttons/btn-grp';
+import Img from './medias/img';
+import Video from './medias/video';
+import { Input, Select, Radio, Checkbox } from './inputs';
+import { FormGrp, FormLabel, FormHint, Form } from './forms';
 
 export const SBtn = Btn;
 export const SBtnGrp = BtnGrp;
@@ -21,6 +19,10 @@ export const SInput = Input;
 export const SSelect = Select;
 export const SRadio = Radio;
 export const SCheckbox = Checkbox;
+export const SFormGrp = FormGrp;
+export const SFormLabel = FormLabel;
+export const SFormHint = FormHint;
+export const SForm = Form;
 
 export default {
   install(Vue) {
@@ -35,5 +37,9 @@ export default {
     Vue.component('s-select', SSelect);
     Vue.component('s-radio', SRadio);
     Vue.component('s-checkbox', SCheckbox);
+    Vue.component('s-form-grp', SFormGrp);
+    Vue.component('s-form-label', SFormLabel);
+    Vue.component('s-form-hint', SFormHint);
+    Vue.component('s-form', SForm);
   }
 };

@@ -1,65 +1,45 @@
-export function boolType(v = false, validator = undefined) {
-  return {
-    type: Boolean,
-    default: v,
-    validator
-  };
-}
+const ud = undefined;
 
-export function strType(v = null, validator = undefined) {
-  return {
-    type: String,
-    default: v,
-    validator
-  };
-}
+const declare = (t, v, vlr = ud) => ({
+  type: t,
+  default: v,
+  validator: vlr
+});
 
-export function arrType(v = [], validator = undefined) {
-  return {
-    type: Array,
-    default: () => v,
-    validator
-  };
-}
+export const boolType = (v = false, vlr = ud) => declare(Boolean, v, vlr);
 
-export function numType(v = 0, validator = undefined) {
-  return {
-    type: Number,
-    default: v,
-    validator
-  };
-}
+export const strType = (v = null, vlr = ud) => declare(String, v, vlr);
 
-export function strArrType(v = [], validator = undefined) {
-  return {
-    type: [String, Array],
-    default: v,
-    validator
-  };
-}
+export const arrType = (v = () => [], vlr = ud) => declare(Array, v, vlr);
 
-export function numStrBoolType(v = false, validator = undefined) {
-  return {
-    type: [Number, String, Boolean],
-    default: v,
-    validator
-  };
-}
+export const numType = (v = 0, vlr = ud) => declare(Number, v, vlr);
 
-export function allType(v = null, validator = undefined) {
-  return {
-    type: [Array, Number, String, Boolean],
-    default: v,
-    validator
-  };
-}
+export const objType = (v = () => {}, vlr = ud) => declare(Object, v, vlr);
+
+export const numStrType = (v = null, vlr = ud) =>
+  declare([String, Number], v, vlr);
+
+export const strArrType = (v = () => [], vlr = ud) =>
+  declare([String, Array], v, vlr);
+
+export const numStrBoolType = (v = false, vlr = ud) =>
+  declare([Number, String, Boolean], v, vlr);
+
+export const numStrObjType = (v = null, vlr = ud) =>
+  declare([Number, String, Boolean, Object], v, vlr);
+
+export const allType = (v = null, vlr = ud) =>
+  declare([Array, Number, String, Boolean], v, vlr);
 
 export default {
-  boolType,
-  strType,
+  allType,
   arrType,
-  numType,
-  strArrType,
+  boolType,
   numStrBoolType,
-  allType
+  numStrObjType,
+  numStrType,
+  numType,
+  objType,
+  strArrType,
+  strType
 };
