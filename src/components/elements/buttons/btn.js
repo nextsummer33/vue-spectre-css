@@ -8,7 +8,7 @@ import Icon from '../icon';
 const cprops = memoize(() => {
   const { sizes, states, types, colors } = getBtn();
   const props = colors
-    .concat(types, sizes, states, 'actionCircle')
+    .concat(types, sizes, states, 'actionCircle', 'inputGrp')
     .reduce((p, v) => (p[v] = boolType()) && p, Object.create(null));
 
   return {
@@ -25,10 +25,11 @@ const mclass = props => {
   const cls = [];
 
   // special case for circle
-  if (cpyps.actionCircle) {
-    cpyps.action = delete cpyps.actionCircle;
+  cpyps.actionCircle &&
+    (cpyps.action = delete cpyps.actionCircle) &&
     cls.push('s-circle');
-  }
+  // input group button case
+  cpyps.inputGrp && delete cpyps.inputGrp && cls.push('input-group-btn');
 
   // handle boolean properties
   boolKeys(cpyps).forEach(v => {
@@ -39,7 +40,6 @@ const mclass = props => {
 };
 
 export default {
-  name: 'SBtn',
   functional: true,
   get props() {
     delete this.props;

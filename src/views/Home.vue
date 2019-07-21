@@ -2,13 +2,11 @@
   <s-grid>
     <s-form-grp title="Fruit" hint="Beautiful" id="a" v-model="inputText" />
     <s-form-grp title="Long text" textarea v-model="inputText" rows="3" />
-    <p v-text="inputText" />
     <s-form-grp title="Fruit" hint="Beautiful" id="c" type="number" />
     <s-form-grp id="b" switch hint="a switch" />
     <s-form-grp hint="Please fill the field.">
       <s-input placeholder="name" />
     </s-form-grp>
-
     <s-form horizontal>
       <s-form-grp
         type="email"
@@ -32,7 +30,7 @@
           <option>Four</option>
         </template>
       </s-form-grp>
-      <s-form-grp :items="[{text: 'One', value: '1'}]" select title="Single" />
+      <s-form-grp sm placeholder="Choose an option" :items="[{text: 'One', value: '1'}]" select title="Single" />
       {{ mchecked }}
       <s-form-grp lhs="3" rhs="9" title="Username">
           <s-input slot="input" type="email" placeholder="hello" />
@@ -61,7 +59,15 @@
           <s-radio label="World2" inline />
         </template>
       </s-form-grp>
+      <s-form-grp title="hello world" hint="this is hint" lhs="3" rhs="9">
+        <template v-slot:input>
+          <s-input-grp addonLeft="Email" sm>
+            <s-input placeholder="test@gmail.com" type="email" sm/>
+          </s-input-grp>
+        </template>
+      </s-form-grp>
     </s-form>
+
   </s-grid>
 </template>
 
