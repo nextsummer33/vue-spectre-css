@@ -24,6 +24,15 @@ describe('s-input-grp', () => {
     expect(w.find(SAddon).text('Email')).toBeTruthy();
   });
 
+  test('should show inline', () => {
+    const w = shallowMount(SInputGrp, {
+      propsData: {
+        inline: true
+      }
+    });
+    expect(w.classes()).toEqual(expect.arrayContaining(['input-inline']));
+  });
+
   test('set label and input size', () => {
     const w = shallowMount(SInputGrp, {
       propsData: {

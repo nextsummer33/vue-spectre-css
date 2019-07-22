@@ -1,6 +1,9 @@
 import Vue from '@/utils/vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import Form from './views/Form.vue';
+import Table from './views/Table.vue';
+import Navbar from './views/Navbar.vue';
 
 Vue.use(Router);
 
@@ -10,8 +13,23 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: Home
+    },
+    {
+      path: '/form',
+      name: 'Form',
+      component: Form
+    },
+    {
+      path: '/table',
+      name: 'Table',
+      component: Table
+    },
+    {
+      path: '/navbar',
+      name: 'Navbar',
+      component: Navbar
     }
     // {
     //   path: '/about',

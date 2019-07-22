@@ -1,11 +1,11 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { strType } from '@/utils/proptypes';
-import { Size, sizeData } from '@/components/mixins';
+import { Size, Inline, inlineData } from '@/components/mixins';
 import Addon from './addon';
 
 export default {
   functional: true,
-  mixins: [Size],
+  mixins: [Size, Inline],
   props: {
     tag: strType('div'),
     addonLeft: strType(),
@@ -13,22 +13,22 @@ export default {
   },
   render(h, { props, data, children }) {
     const { addonLeft, addonRight, sm, lg } = props;
-    children = children || [];
-    addonLeft &&
-      children.splice(0, 0, h(Addon, { props: { sm, lg } }, addonLeft));
-    addonRight &&
-      children.splice(
-        children.length,
-        0,
-        h(Addon, { props: { sm, lg } }, addonRight)
-      );
+    const ch = children || [];
+
+    if (addonLeft) {
+      ch.splice(0, 0, h(Addon, { props: { sm, lg } }, addonLeft));
+    }
+
+    if (addonRight) {
+      ch.splice(ch.length, 0, h(Addon, { props: { sm, lg } }, addonRight));
+    }
 
     return h(
       props.tag,
-      mergeData(data, {
+      mergeData(data, inlineData('input', props), {
         staticClass: 'input-group'
       }),
-      children
+      ch
     );
   }
 };

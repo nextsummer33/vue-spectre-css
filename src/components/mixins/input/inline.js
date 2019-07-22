@@ -1,9 +1,9 @@
 import { boolType } from '@/utils/proptypes';
 
-export function inlineData(props) {
+export function inlineData(prefix, props) {
   return {
     class: {
-      'form-inline': props.inline
+      [prefix + '-inline']: props.inline
     }
   };
 }

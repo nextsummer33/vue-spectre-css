@@ -7,6 +7,7 @@ import Img from './medias/img';
 import Video from './medias/video';
 import { Input, Select, Radio, Checkbox, InputGrp, Addon } from './inputs';
 import { FormGrp, FormLabel, FormHint, Form } from './forms';
+import { Table, Tr } from './tables';
 
 export const SBtn = Btn;
 export const SBtnGrp = BtnGrp;
@@ -25,6 +26,8 @@ export const SFormHint = FormHint;
 export const SForm = Form;
 export const SInputGrp = InputGrp;
 export const SAddon = Addon;
+export const STable = Table;
+export const STr = Tr;
 
 export default {
   install(Vue) {
@@ -45,5 +48,7 @@ export default {
     Vue.component('s-video', SVideo);
     Vue.component('s-input-grp', SInputGrp);
     Vue.component('s-addon', SAddon);
+    Vue.component('s-table', STable);
+    Vue.component('s-tr', STr);
   }
 };

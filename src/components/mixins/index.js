@@ -1,13 +1,14 @@
-import color from './color';
-import size from './size';
-import inline from './inline';
+import Input from './input';
+export { Color, colorData, Size, sizeData, Inline, inlineData } from './input';
 
-export { colorData } from './color';
-export { sizeData } from './size';
-export { inlineData } from './inline';
+export { activeData } from './active';
+import active from './active';
+export const Active = active;
 
-export const Color = color;
-export const Size = size;
-export const Inline = inline;
+export const InputMixins = Input;
+export const ActiveMixins = [Active];
 
-export default [Color, Size, Inline];
+export default {
+  InputMixins,
+  ActiveMixins
+};

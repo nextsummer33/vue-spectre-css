@@ -1,6 +1,11 @@
 import { strType, numStrBoolType } from '@/utils/proptypes';
 import { mergeData } from 'vue-functional-data-merge';
-import mixins, { colorData, sizeData, inlineData } from '@/components/mixins';
+import {
+  InputMixins as mixins,
+  colorData,
+  sizeData,
+  inlineData
+} from '@/components/mixins';
 
 export default {
   name: 'SRadio',
@@ -9,7 +14,7 @@ export default {
   mixins,
   props: {
     tag: strType('input'),
-    checked: numStrBoolType('off'),
+    checked: numStrBoolType(false),
     value: numStrBoolType('on'),
     label: strType('Label')
   },
@@ -39,7 +44,7 @@ export default {
     return h(
       'label',
       mergeData(
-        inlineData(props),
+        inlineData('form', props),
         colorData('is', props),
         sizeData('input', props),
         { staticClass: 'form-radio' }

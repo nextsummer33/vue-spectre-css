@@ -1,6 +1,11 @@
 import { boolType, numStrBoolType, allType, strType } from '@/utils/proptypes';
 import { mergeData } from 'vue-functional-data-merge';
-import mixins, { colorData, sizeData, inlineData } from '@/components/mixins';
+import {
+  InputMixins as mixins,
+  colorData,
+  sizeData,
+  inlineData
+} from '@/components/mixins';
 import { isExist, isObj } from '@/utils/object';
 import memoize from '@/utils/memoize';
 
@@ -57,7 +62,7 @@ function render(h, { props, data, listeners }) {
   return h(
     'label',
     mergeData(
-      inlineData(props),
+      inlineData('form', props),
       colorData('is', props),
       sizeData('input', props),
       { staticClass: props.switch ? 'form-switch' : 'form-checkbox' }
