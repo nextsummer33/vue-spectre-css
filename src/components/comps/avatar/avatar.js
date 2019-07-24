@@ -49,13 +49,19 @@ export default {
 
     return h(
       props.tag,
-      mergeData(data, allSizeData('avatar', props), {
-        staticClass: 'avatar',
-        attrs: {
-          'data-initial': props.initial || undefined
+      mergeData(
+        allSizeData('avatar', props),
+        {
+          staticClass: 'avatar',
+          attrs: {
+            'data-initial': props.initial || undefined
+          },
+          style: props.bgColor
+            ? `background-color: ${props.bgColor};`
+            : undefined
         },
-        style: props.bgColor ? `background-color: ${props.bgColor};` : undefined
-      }),
+        props.tag === 'img' ? data : {}
+      ),
       ch
     );
   }

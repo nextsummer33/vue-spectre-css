@@ -6,6 +6,9 @@ import Table from './views/Table.vue';
 import Navbar from './views/Navbar.vue';
 import Tile from './views/Tile.vue';
 import Avatar from './views/Avatar.vue';
+import Chip from './views/Chip.vue';
+import Toast from './views/Toast.vue';
+import Tab from './views/Tab.vue';
 
 Vue.use(Router);
 
@@ -42,6 +45,21 @@ export default new Router({
       path: '/tile',
       name: 'Tile',
       component: Tile
+    },
+    {
+      path: '/chip',
+      name: 'Chip',
+      component: Chip
+    },
+    {
+      path: '/toast',
+      name: 'Toast',
+      component: Toast
+    },
+    {
+      path: '/tab',
+      name: 'Tab',
+      component: Tab
     }
     // {
     //   path: '/about',

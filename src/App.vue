@@ -7,6 +7,9 @@
       <router-link to="/navbar">Navbar</router-link> |
       <router-link to="/tile">Tile</router-link> |
       <router-link to="/avatar">Avatar</router-link> |
+      <router-link to="/chip">Chip</router-link> |
+      <router-link to="/toast">Toast</router-link> |
+      <router-link to="/tab">Tab</router-link> |
     </div>
     <router-view />
   </div>
