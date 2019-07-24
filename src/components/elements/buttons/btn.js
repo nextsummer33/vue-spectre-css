@@ -49,7 +49,7 @@ export default {
     // handle the icon component position
     const icon = props.iconLeft || props.iconRight;
     const icnVm = icon && h(Icon, { props: { icon } });
-    let child = children || ['Button'];
+    let child = children || [];
     child =
       (props.iconLeft && [icnVm, ' ', ...child]) ||
       (props.iconRight && [...child, ' ', icnVm]) ||

@@ -75,13 +75,13 @@ describe('s-hero', () => {
     });
 
     expect(w.find(Icon).isVisible()).toBeTruthy();
-    expect(w.html().indexOf('</i> Button')).toBeGreaterThan(-1);
+    expect(w.html().indexOf('</i>')).toBeGreaterThan(-1);
 
     const w1 = shallowMount(Btn, {
       propsData: {
         iconRight: 'arrow-up'
       }
     });
-    expect(w1.html().indexOf('Button <i')).toBeGreaterThan(-1);
+    expect(w1.html().indexOf('<i')).toBeGreaterThan(-1);
   });
 });

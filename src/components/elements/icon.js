@@ -15,13 +15,20 @@ const cprops = memoize(() => {
     tag: strType('i'),
     icon: strType(),
     font: strType(),
+    centered: boolType(),
     ...props
   };
 });
 
 const mclass = props => {
+  // skip the centered, handle by special case
+  const centered = props.centered;
+  props.centered = false;
+
   const cls = boolKeys(props).map(v => 'icon-' + v);
   props.icon && cls.push('icon-' + props.icon);
+  centered && cls.push('centered');
+
   return cls;
 };
 
