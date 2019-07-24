@@ -1,32 +1,22 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { strType, boolType } from '@/utils/proptypes';
+import { getAvatar } from '@/utils/get-var';
 import memoize from '@/utils/memoize';
-import { getIcon } from '@/utils/get-var';
 import { boolKeys } from '@/utils/object';
 
 const cprops = memoize(() => {
-  const { sizes } = getIcon();
-  const props = sizes.reduce(
-    (p, v) => (p[v] = boolType()) && p,
+  // online, offince, busy
+  const props = getAvatar().presences.reduce(
+    (o, v) => (o[v] = boolType()) && o,
     Object.create(null)
   );
-
   return {
     tag: strType('i'),
-    icon: strType(),
-    font: strType(),
     ...props
   };
 });
 
-const mclass = props => {
-  const cls = boolKeys(props).map(v => 'icon-' + v);
-  props.icon && cls.push('icon-' + props.icon);
-  return cls;
-};
-
 export default {
-  name: 'SIcon',
   functional: true,
   get props() {
     delete this.props;
@@ -36,9 +26,8 @@ export default {
     return h(
       props.tag,
       mergeData(data, {
-        staticClass: 'icon',
-        class: mclass(props),
-        style: props.font && { 'font-size': props.font + 'px' }
+        staticClass: 'avatar-presence',
+        class: boolKeys(props)
       }),
       children
     );

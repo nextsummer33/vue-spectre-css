@@ -42,5 +42,8 @@ export default {
   },
   form: {
     types: ['textarea', 'checkbox', 'radio', 'select']
+  },
+  avatar: {
+    presences: ['online', 'busy', 'away']
   }
 };

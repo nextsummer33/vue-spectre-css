@@ -4,6 +4,8 @@ import Home from './views/Home.vue';
 import Form from './views/Form.vue';
 import Table from './views/Table.vue';
 import Navbar from './views/Navbar.vue';
+import Tile from './views/Tile.vue';
+import Avatar from './views/Avatar.vue';
 
 Vue.use(Router);
 
@@ -30,6 +32,16 @@ export default new Router({
       path: '/navbar',
       name: 'Navbar',
       component: Navbar
+    },
+    {
+      path: '/avatar',
+      name: 'Avatar',
+      component: Avatar
+    },
+    {
+      path: '/tile',
+      name: 'Tile',
+      component: Tile
     }
     // {
     //   path: '/about',

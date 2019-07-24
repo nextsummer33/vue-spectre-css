@@ -5,6 +5,8 @@
       <router-link to="/form">Form</router-link> |
       <router-link to="/table">Tables</router-link> |
       <router-link to="/navbar">Navbar</router-link> |
+      <router-link to="/tile">Tile</router-link> |
+      <router-link to="/avatar">Avatar</router-link> |
     </div>
     <router-view />
   </div>
