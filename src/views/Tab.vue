@@ -1,4 +1,3 @@
 <template>
-  <s-grid>
-  </s-grid>
+  <s-grid> </s-grid>
 </template>

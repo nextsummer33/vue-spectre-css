@@ -6,8 +6,7 @@
 export default {
   name: 'home',
   data() {
-    return {
-    };
+    return {};
   },
   computed: {},
   methods: {}

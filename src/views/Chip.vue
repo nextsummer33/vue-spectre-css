@@ -11,9 +11,15 @@
     <s-row>
       <s-col>
         <s-chip initial="TS">Tony Stark</s-chip>
-        <s-chip src="https://picturepan2.github.io/spectre/img/avatar-1.png">Thor Odinson</s-chip>
+        <s-chip src="https://picturepan2.github.io/spectre/img/avatar-1.png"
+          >Thor Odinson</s-chip
+        >
         <s-chip initial="YZ" clear></s-chip>
-        <s-chip src="https://picturepan2.github.io/spectre/img/avatar-1.png" clear @click="sayHi" />
+        <s-chip
+          src="https://picturepan2.github.io/spectre/img/avatar-1.png"
+          clear
+          @click="sayHi"
+        />
       </s-col>
     </s-row>
   </s-grid>
@@ -22,15 +28,12 @@
 <script>
 export default {
   data() {
-    return {
-
-    }
+    return {};
   },
   methods: {
     sayHi() {
       console.log('hello');
     }
   }
-}
+};
 </script>
-

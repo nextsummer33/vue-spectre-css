@@ -3,6 +3,7 @@ import Hero from './hero';
 import Tile from './tile';
 import Avatar from './avatar';
 import Chip from './chip';
+import Toast from './toast';
 
 export default {
   install: Vue => {
@@ -11,5 +12,6 @@ export default {
     Vue.use(Tile);
     Vue.use(Avatar);
     Vue.use(Chip);
+    Vue.use(Toast);
   }
 };

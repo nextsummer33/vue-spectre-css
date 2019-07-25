@@ -22,6 +22,7 @@ export const getLang = () => getVariable('lang');
 export const getInput = () => getVariable('input');
 export const getForm = () => getVariable('form');
 export const getAvatar = () => getVariable('avatar');
+export const getToast = () => getVariable('toast');
 
 export default {
   getLayout,
@@ -34,5 +35,6 @@ export default {
   getLang,
   getInput,
   getForm,
-  getAvatar
+  getAvatar,
+  getToast
 };

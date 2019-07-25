@@ -21,7 +21,9 @@
         <s-btn tag="a" href="#" link>Examples</s-btn>
       </template>
       <template v-slot:center>
-        <s-img src="https://picturepan2.github.io/spectre/img/spectre-logo.svg" />
+        <s-img
+          src="https://picturepan2.github.io/spectre/img/spectre-logo.svg"
+        />
       </template>
       <template v-slot:right>
         <s-btn tag="a" href="#" link>Twitter</s-btn>
@@ -32,8 +34,5 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
-

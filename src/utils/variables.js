@@ -45,5 +45,8 @@ export default {
   },
   avatar: {
     presences: ['online', 'busy', 'away']
+  },
+  toast: {
+    colors: ['primary', 'success', 'warning', 'error']
   }
 };

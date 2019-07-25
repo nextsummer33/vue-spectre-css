@@ -11,6 +11,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "spectre.css": "^0.5.8",
+    "velocity-animate": "^1.5.2",
     "vue": "^2.6.10",
     "vue-functional-data-merge": "^3.1.0",
     "vue-router": "^3.0.3"
@@ -39,7 +40,12 @@
       "@vue/prettier"
     ],
     "rules": {
-      "prettier/prettier": ["error", { "singleQuote": true }],
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true
+        }
+      ],
       "no-console": "off",
       "no-unused-vars": "off"
     },
