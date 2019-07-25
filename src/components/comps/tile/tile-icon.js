@@ -6,7 +6,7 @@ import { SIcon } from '@/components/elements';
 const iconWrapper = (h, staticClass, size, data) => {
   const style = staticClass
     ? undefined
-    : `display: flex;align-items: center;align-content: space-around;width: ${size};height: ${size};`;
+    : `display: flex; align-items: center; align-content: space-around; width: ${size}; height: ${size};`;
   return h('div', { staticClass, style }, [
     h(SIcon, mergeData(data, { style: 'margin: auto;' }))
   ]);
