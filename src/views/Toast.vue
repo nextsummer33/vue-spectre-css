@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { SToast } from '@/components/comps/toast'
+import { SToast } from '@/components/comps/toast';
 import Vue from 'vue';
 export default {
   methods: {
@@ -34,5 +34,5 @@ export default {
       alert('Hi');
     }
   }
-}
+};
 </script>

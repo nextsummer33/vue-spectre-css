@@ -5,6 +5,7 @@ import Avatar from './avatar';
 import Chip from './chip';
 import Toast from './toast';
 import Tab from './tab';
+import Card from './card';
 
 export default {
   install: Vue => {
@@ -15,5 +16,6 @@ export default {
     Vue.use(Chip);
     Vue.use(Toast);
     Vue.use(Tab);
+    Vue.use(Card);
   }
 };

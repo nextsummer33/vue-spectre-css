@@ -9,6 +9,7 @@ import Avatar from './views/Avatar.vue';
 import Chip from './views/Chip.vue';
 import Toast from './views/Toast.vue';
 import Tab from './views/Tab.vue';
+import Card from './views/Card.vue';
 
 Vue.use(Router);
 
@@ -60,6 +61,11 @@ export default new Router({
       path: '/tab',
       name: 'Tab',
       component: Tab
+    },
+    {
+      path: '/card',
+      name: 'Card',
+      component: Card
     }
     // {
     //   path: '/about',

@@ -10,6 +10,7 @@
       <router-link to="/chip">Chip</router-link> |
       <router-link to="/toast">Toast</router-link> |
       <router-link to="/tab">Tab</router-link> |
+      <router-link to="/card">Card</router-link> |
     </div>
     <router-view />
   </div>

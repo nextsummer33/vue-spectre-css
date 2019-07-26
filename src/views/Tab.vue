@@ -18,9 +18,9 @@
         </s-input-grp>
       </s-tab-item>
     </s-tab>
-    <s-tab :items="items" v-model="tabIndex"/>
-    <s-tab :items="items" @select="tabIndex = $event"/>
-    <s-tab block :items="items" @select="tabIndex = $event"/>
+    <s-tab :items="items" v-model="tabIndex" />
+    <s-tab :items="items" @select="tabIndex = $event" />
+    <s-tab block :items="items" @select="tabIndex = $event" />
     <div id="basketball" v-show="tabIndex == 0">basketball</div>
     <div id="football" v-show="tabIndex == 1">football</div>
     <div id="badminton" v-show="tabIndex == 2">Badminton</div>
@@ -33,11 +33,11 @@ export default {
     return {
       tabIndex: 0,
       items: [
-        { tab: 'Baseketball' , badge: '2'},
+        { tab: 'Baseketball', badge: '2' },
         { tab: 'Football' },
-        { tab: 'Badminton' },
+        { tab: 'Badminton' }
       ]
-    }
+    };
   }
-}
+};
 </script>
