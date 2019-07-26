@@ -14,7 +14,7 @@ export default {
   mixins,
   props: {
     tag: strType('input'),
-    checked: numStrBoolType(false),
+    checked: numStrBoolType('off'),
     value: numStrBoolType('on'),
     label: strType('Label')
   },
@@ -40,7 +40,9 @@ export default {
         domProps: { checked: checked === value }
       })
     );
+
     const iconVm = h('i', { staticClass: 'form-icon' });
+
     return h(
       'label',
       mergeData(

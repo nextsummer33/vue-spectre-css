@@ -22,8 +22,8 @@
     </s-form-grp>
     <h2>Form radio</h2>
     <s-form-grp title="Gender">
-      <template v-slot:input="">
-        <s-radio label="Male" />
+      <template v-slot:input>
+        <s-radio label="Male" checked />
         <s-radio label="Felmale" />
       </template>
     </s-form-grp>
@@ -41,8 +41,8 @@
     <h2>Inline forms</h2>
     <s-form-grp>
       <template v-slot:input>
-        <s-radio label="Male" inline />
-        <s-radio label="Female" inline :checked="true" />
+        <s-radio label="Male" inline checked />
+        <s-radio label="Female" inline />
       </template>
     </s-form-grp>
 
@@ -59,7 +59,7 @@
       <s-form-grp title="Gender" lhs="2" rhs="10">
         <template v-slot:input>
           <s-radio inline label="Male" />
-          <s-radio inline label="Female" />
+          <s-radio inline label="Female" checked />
         </template>
       </s-form-grp>
       <s-form-grp
