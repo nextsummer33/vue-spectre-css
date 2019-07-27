@@ -14,11 +14,11 @@ export const SCardImg = CardImg;
 
 export default {
   install(Vue) {
-    Vue.component('s-card', Card);
     Vue.component('s-card-img', CardImg);
     Vue.component('s-card-header', CardHeader);
     Vue.component('s-card-body', CardBody);
     Vue.component('s-card-footer', CardFooter);
     Vue.component('s-card-text', CardText);
+    Vue.component('s-card', Card);
   }
 };

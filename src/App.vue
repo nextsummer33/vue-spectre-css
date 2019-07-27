@@ -11,6 +11,7 @@
       <router-link to="/toast">Toast</router-link> |
       <router-link to="/tab">Tab</router-link> |
       <router-link to="/card">Card</router-link> |
+      <router-link to="/panel">Panel</router-link> |
     </div>
     <router-view />
   </div>

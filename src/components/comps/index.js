@@ -6,6 +6,7 @@ import Chip from './chip';
 import Toast from './toast';
 import Tab from './tab';
 import Card from './card';
+import Panel from './panel';
 
 export default {
   install: Vue => {
@@ -17,5 +18,6 @@ export default {
     Vue.use(Toast);
     Vue.use(Tab);
     Vue.use(Card);
+    Vue.use(Panel);
   }
 };
