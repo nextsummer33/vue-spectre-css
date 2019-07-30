@@ -13,6 +13,7 @@
       <router-link to="/card">Card</router-link> |
       <router-link to="/panel">Panel</router-link> |
       <router-link to="/tooltip">Tooltip</router-link> |
+      <router-link to="/breadcrumb">Breadcrumb</router-link> |
     </div>
     <router-view />
   </div>

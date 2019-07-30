@@ -12,6 +12,7 @@ import Tab from './views/Tab.vue';
 import Card from './views/Card.vue';
 import Panel from './views/Panel.vue';
 import Tooltip from './views/Tooltip.vue';
+import Breadcrumb from './views/Breadcrumb.vue';
 
 Vue.use(Router);
 
@@ -78,6 +79,11 @@ export default new Router({
       path: '/tooltip',
       name: 'Tooltip',
       component: Tooltip
+    },
+    {
+      path: '/breadcrumb',
+      name: 'Breadcrumb',
+      component: Breadcrumb
     }
     // {
     //   path: '/about',
