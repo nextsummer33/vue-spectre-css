@@ -13,6 +13,7 @@ import Card from './views/Card.vue';
 import Panel from './views/Panel.vue';
 import Tooltip from './views/Tooltip.vue';
 import Breadcrumb from './views/Breadcrumb.vue';
+import Popover from './views/Popover.vue';
 
 Vue.use(Router);
 
@@ -84,6 +85,11 @@ export default new Router({
       path: '/breadcrumb',
       name: 'Breadcrumb',
       component: Breadcrumb
+    },
+    {
+      path: '/popover',
+      name: 'Popover',
+      component: Popover
     }
     // {
     //   path: '/about',

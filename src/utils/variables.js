@@ -1,4 +1,5 @@
 export default {
+  directions: ['left', 'right', 'top', 'bottom'],
   layout: {
     viewports: ['xs', 'sm', 'md', 'lg', 'xl'],
     offsets: ['mx', 'ml', 'mr']

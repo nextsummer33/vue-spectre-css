@@ -14,6 +14,7 @@
       <router-link to="/panel">Panel</router-link> |
       <router-link to="/tooltip">Tooltip</router-link> |
       <router-link to="/breadcrumb">Breadcrumb</router-link> |
+      <router-link to="/popover">Popover</router-link> |
     </div>
     <router-view />
   </div>

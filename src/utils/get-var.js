@@ -11,6 +11,7 @@ const getVariable = memorize(name => {
   return {};
 });
 
+export const getDirections = () => getVariable('directions');
 export const getLayout = () => getVariable('layout');
 export const getColors = () => getVariable('colors');
 export const getButton = () => getVariable('button');
@@ -25,6 +26,7 @@ export const getAvatar = () => getVariable('avatar');
 export const getToast = () => getVariable('toast');
 
 export default {
+  getDirections,
   getLayout,
   getButton,
   getColors,

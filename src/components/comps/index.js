@@ -8,6 +8,7 @@ import Tab from './tab';
 import Card from './card';
 import Panel from './panel';
 import Breadcrumb from './breadcrumb';
+import Popover from './popover';
 
 export default {
   install: Vue => {
@@ -21,5 +22,6 @@ export default {
     Vue.use(Card);
     Vue.use(Panel);
     Vue.use(Breadcrumb);
+    Vue.use(Popover);
   }
 };
