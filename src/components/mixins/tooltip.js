@@ -1,7 +1,6 @@
 import { strType, boolType } from '@/utils/proptypes';
 import { isExist } from '@/utils/object';
-
-const positions = ['left', 'top', 'right', 'bottom'];
+import { getDirections } from '@/utils/get-var';
 
 export function tooltipData(props) {
   if (!isExist(props.tooltip)) return {};
@@ -20,12 +19,11 @@ export function tooltipData(props) {
   };
 }
 
+const cprops = () =>
+  getDirections().reduce((o, v) => (o[v] = boolType()) && o, {
+    tooltip: strType()
+  });
+
 export default {
-  props: {
-    tooltip: strType(),
-    tooltipLeft: boolType(),
-    tooltipTop: boolType(),
-    tooltipRight: boolType(),
-    tooltipBottom: boolType()
-  }
+  props: cprops()
 };

@@ -8,7 +8,11 @@
         <s-breadcrumb>
           <s-breadcrumb-item to="#" text="Home" />
           <s-breadcrumb-item to="#" text="Settings" />
-          <s-breadcrumb-item prefix="Search Result: " to="#" text="Spectre CSS" />
+          <s-breadcrumb-item
+            prefix="Search Result: "
+            to="#"
+            text="Spectre CSS"
+          />
         </s-breadcrumb>
       </s-col>
     </s-row>
@@ -23,9 +27,7 @@
           </s-breadcrumb-item>
         </s-breadcrumb>
       </s-col>
-      <s-col col="6">
-
-      </s-col>
+      <s-col col="6"> </s-col>
     </s-row>
   </s-grid>
 </template>
@@ -39,8 +41,7 @@ export default {
         { text: 'Settings', to: '/settings' },
         { text: 'Change avatar', to: '/changeavatar' }
       ]
-    }
+    };
   }
-}
+};
 </script>
-

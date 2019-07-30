@@ -1,19 +1,14 @@
+import { getDirections } from '@/utils/get-var';
 import { mergeData } from 'vue-functional-data-merge';
 import { strType, boolType } from '@/utils/proptypes';
-import memoize from '@/utils/memoize';
-import { getDirections } from '@/utils/get-var';
 import Container from './popover-container';
+import memoize from '@/utils/memoize';
 
-const cprops = memoize(() => {
-  const posProps = getDirections().reduce(
-    (o, v) => (o[v] = boolType()) && o,
-    {}
-  );
-  return {
-    tag: strType('div'),
-    ...posProps
-  };
-});
+const cprops = memoize(() =>
+  getDirections().reduce((o, v) => (o[v] = boolType()) && o, {
+    tag: strType('div')
+  })
+);
 
 export default {
   functional: true,
@@ -22,12 +17,16 @@ export default {
     return (this.props = cprops());
   },
   render(h, { props, data, children, slots }) {
-    const cls = [];
+    const cls = [
+      props.top
+        ? 'popover-top'
+        : props.bottom
+        ? 'popover-bottom'
+        : props.right
+        ? 'popover-right'
+        : ''
+    ];
     const slotEls = slots();
-
-    getDirections().forEach(dir => {
-      props[dir] && cls.push('popover-' + dir);
-    });
 
     return h(
       props.tag,

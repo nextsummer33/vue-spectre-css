@@ -16,7 +16,10 @@
     </s-row>
     <s-row>
       <s-col>
-        <s-btn :tooltip="'First Line Tooltip Text \n Second Line Tooltip Text'" tooltipRight>
+        <s-btn
+          :tooltip="'First Line Tooltip Text \n Second Line Tooltip Text'"
+          tooltipRight
+        >
           multiline tooltip
         </s-btn>
       </s-col>
