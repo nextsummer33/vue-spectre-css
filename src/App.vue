@@ -15,6 +15,7 @@
       <router-link to="/tooltip">Tooltip</router-link> |
       <router-link to="/breadcrumb">Breadcrumb</router-link> |
       <router-link to="/popover">Popover</router-link> |
+      <router-link to="/step">Step</router-link> |
     </div>
     <router-view />
   </div>

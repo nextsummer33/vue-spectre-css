@@ -16,7 +16,7 @@ export default {
     delete this.props;
     return (this.props = cprops());
   },
-  render(h, { props, data, children, slots }) {
+  render(h, { props, data, slots }) {
     const cls = [
       props.top
         ? 'popover-top'
@@ -27,14 +27,13 @@ export default {
         : ''
     ];
     const slotEls = slots();
-
     return h(
       props.tag,
       mergeData(data, {
         staticClass: 'popover',
         class: cls
       }),
-      children || [slotEls.toggle, h(Container, slotEls.container)]
+      slotEls.default || [slotEls.toggle, h(Container, slotEls.container)]
     );
   }
 };

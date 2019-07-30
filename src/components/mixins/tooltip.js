@@ -1,6 +1,7 @@
 import { strType, boolType } from '@/utils/proptypes';
 import { isExist } from '@/utils/object';
 import { getDirections } from '@/utils/get-var';
+import { capf } from '@/utils/string';
 
 export function tooltipData(props) {
   if (!isExist(props.tooltip)) return {};
@@ -20,7 +21,7 @@ export function tooltipData(props) {
 }
 
 const cprops = () =>
-  getDirections().reduce((o, v) => (o[v] = boolType()) && o, {
+  getDirections().reduce((o, v) => (o['tooltip' + capf(v)] = boolType()) && o, {
     tooltip: strType()
   });
 

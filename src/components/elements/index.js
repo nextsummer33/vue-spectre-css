@@ -8,6 +8,7 @@ import Video from './medias/video';
 import { Input, Select, Radio, Checkbox, InputGrp, Addon } from './inputs';
 import { FormGrp, FormLabel, FormHint, Form } from './forms';
 import { Table, Tr } from './tables';
+import Link from './link';
 
 export const SBtn = Btn;
 export const SBtnGrp = BtnGrp;
@@ -28,27 +29,29 @@ export const SInputGrp = InputGrp;
 export const SAddon = Addon;
 export const STable = Table;
 export const STr = Tr;
+export const SLink = Link;
 
 export default {
   install(Vue) {
-    Vue.component('s-btn-grp', SBtnGrp);
-    Vue.component('s-btn', SBtn);
-    Vue.component('s-checkbox', SCheckbox);
-    Vue.component('s-form-grp', SFormGrp);
-    Vue.component('s-form-hint', SFormHint);
-    Vue.component('s-form-label', SFormLabel);
-    Vue.component('s-form', SForm);
-    Vue.component('s-icon', SIcon);
-    Vue.component('s-img', SImg);
-    Vue.component('s-input', SInput);
-    Vue.component('s-label', SLabel);
-    Vue.component('s-lang', SLang);
-    Vue.component('s-radio', SRadio);
-    Vue.component('s-select', SSelect);
-    Vue.component('s-video', SVideo);
-    Vue.component('s-input-grp', SInputGrp);
-    Vue.component('s-addon', SAddon);
-    Vue.component('s-table', STable);
-    Vue.component('s-tr', STr);
+    Vue.component('s-btn-grp', BtnGrp);
+    Vue.component('s-btn', Btn);
+    Vue.component('s-checkbox', Checkbox);
+    Vue.component('s-form-grp', FormGrp);
+    Vue.component('s-form-hint', FormHint);
+    Vue.component('s-form-label', FormLabel);
+    Vue.component('s-form', Form);
+    Vue.component('s-icon', Icon);
+    Vue.component('s-img', Img);
+    Vue.component('s-input', Input);
+    Vue.component('s-label', Label);
+    Vue.component('s-lang', Lang);
+    Vue.component('s-radio', Radio);
+    Vue.component('s-select', Select);
+    Vue.component('s-video', Video);
+    Vue.component('s-input-grp', InputGrp);
+    Vue.component('s-addon', Addon);
+    Vue.component('s-table', Table);
+    Vue.component('s-tr', Tr);
+    Vue.component('s-link', Link);
   }
 };
