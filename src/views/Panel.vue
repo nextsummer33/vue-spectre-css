@@ -21,19 +21,19 @@
             <s-tile centered>
               <s-tile-content title="Email" subtitle="bruce.banner@hulk.com" />
               <s-tile-action>
-                <s-btn iconLeft="edit" link />
+                <s-btn icon="edit" link />
               </s-tile-action>
             </s-tile>
             <s-tile centered>
               <s-tile-content title="Email" subtitle="bruce.banner@hulk.com" />
               <s-tile-action>
-                <s-btn iconLeft="edit" link />
+                <s-btn icon="edit" link />
               </s-tile-action>
             </s-tile>
             <s-tile centered>
               <s-tile-content title="Email" subtitle="bruce.banner@hulk.com" />
               <s-tile-action>
-                <s-btn iconLeft="edit" link />
+                <s-btn icon="edit" link />
               </s-tile-action>
             </s-tile>
           </s-panel-body>
@@ -48,50 +48,88 @@
           <s-panel-header title="comments" />
           <s-panel-body style="height:400px;overflow-y:scroll;">
             <s-tile>
-              <s-tile-icon src="https://picturepan2.github.io/spectre/img/avatar-1.png" avatar />
+              <s-tile-icon
+                src="https://picturepan2.github.io/spectre/img/avatar-1.png"
+                avatar
+              />
               <s-tile-content>
                 <s-tile-text title tag="strong">Thor Odinson</s-tile-text>
-                <s-tile-text subtitle>Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</s-tile-text>
+                <s-tile-text subtitle
+                  >Earth's Mightiest Heroes joined forces to take on threats
+                  that were too big for any one hero to tackle...</s-tile-text
+                >
+              </s-tile-content>
+              <s-tile-action>
+                <s-btn icon="check" link />
+              </s-tile-action>
+            </s-tile>
+            <s-tile>
+              <s-tile-icon
+                src="https://picturepan2.github.io/spectre/img/avatar-1.png"
+                avatar
+              />
+              <s-tile-content>
+                <s-tile-text title tag="strong">Thor Odinson</s-tile-text>
+                <s-tile-text subtitle
+                  >Earth's Mightiest Heroes joined forces to take on threats
+                  that were too big for any one hero to tackle...</s-tile-text
+                >
               </s-tile-content>
               <s-tile-action></s-tile-action>
             </s-tile>
             <s-tile>
-              <s-tile-icon src="https://picturepan2.github.io/spectre/img/avatar-1.png" avatar />
+              <s-tile-icon
+                src="https://picturepan2.github.io/spectre/img/avatar-1.png"
+                avatar
+              />
               <s-tile-content>
                 <s-tile-text title tag="strong">Thor Odinson</s-tile-text>
-                <s-tile-text subtitle>Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</s-tile-text>
+                <s-tile-text subtitle
+                  >Earth's Mightiest Heroes joined forces to take on threats
+                  that were too big for any one hero to tackle...</s-tile-text
+                >
               </s-tile-content>
               <s-tile-action></s-tile-action>
             </s-tile>
             <s-tile>
-              <s-tile-icon src="https://picturepan2.github.io/spectre/img/avatar-1.png" avatar />
+              <s-tile-icon
+                src="https://picturepan2.github.io/spectre/img/avatar-1.png"
+                avatar
+              />
               <s-tile-content>
                 <s-tile-text title tag="strong">Thor Odinson</s-tile-text>
-                <s-tile-text subtitle>Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</s-tile-text>
+                <s-tile-text subtitle
+                  >Earth's Mightiest Heroes joined forces to take on threats
+                  that were too big for any one hero to tackle...</s-tile-text
+                >
               </s-tile-content>
               <s-tile-action></s-tile-action>
             </s-tile>
             <s-tile>
-              <s-tile-icon src="https://picturepan2.github.io/spectre/img/avatar-1.png" avatar />
+              <s-tile-icon
+                src="https://picturepan2.github.io/spectre/img/avatar-1.png"
+                avatar
+              />
               <s-tile-content>
                 <s-tile-text title tag="strong">Thor Odinson</s-tile-text>
-                <s-tile-text subtitle>Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</s-tile-text>
+                <s-tile-text subtitle
+                  >Earth's Mightiest Heroes joined forces to take on threats
+                  that were too big for any one hero to tackle...</s-tile-text
+                >
               </s-tile-content>
               <s-tile-action></s-tile-action>
             </s-tile>
             <s-tile>
-              <s-tile-icon src="https://picturepan2.github.io/spectre/img/avatar-1.png" avatar />
+              <s-tile-icon
+                src="https://picturepan2.github.io/spectre/img/avatar-1.png"
+                avatar
+              />
               <s-tile-content>
                 <s-tile-text title tag="strong">Thor Odinson</s-tile-text>
-                <s-tile-text subtitle>Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</s-tile-text>
-              </s-tile-content>
-              <s-tile-action></s-tile-action>
-            </s-tile>
-            <s-tile>
-              <s-tile-icon src="https://picturepan2.github.io/spectre/img/avatar-1.png" avatar />
-              <s-tile-content>
-                <s-tile-text title tag="strong">Thor Odinson</s-tile-text>
-                <s-tile-text subtitle>Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</s-tile-text>
+                <s-tile-text subtitle
+                  >Earth's Mightiest Heroes joined forces to take on threats
+                  that were too big for any one hero to tackle...</s-tile-text
+                >
               </s-tile-content>
               <s-tile-action></s-tile-action>
             </s-tile>

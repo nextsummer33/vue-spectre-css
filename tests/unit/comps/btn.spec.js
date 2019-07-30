@@ -70,7 +70,7 @@ describe('s-hero', () => {
   test('show icon when icon is set', () => {
     const w = shallowMount(Btn, {
       propsData: {
-        iconLeft: 'arrow-up'
+        icon: 'arrow-up'
       }
     });
 

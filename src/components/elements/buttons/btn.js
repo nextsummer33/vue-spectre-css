@@ -1,9 +1,9 @@
+import { getButton as getBtn } from '@/utils/get-var';
 import { mergeData } from 'vue-functional-data-merge';
 import { strType, boolType } from '@/utils/proptypes';
-import memoize from '@/utils/memoize';
-import { getButton as getBtn } from '@/utils/get-var';
-import { boolKeys } from '@/utils/object';
+import { tooltipData, Tooltip } from '@/components/mixins';
 import Icon from '../icon';
+import memoize from '@/utils/memoize';
 
 const cprops = memoize(() => {
   const { sizes, states, types, colors } = getBtn();
@@ -13,51 +13,50 @@ const cprops = memoize(() => {
 
   return {
     tag: strType('button'),
-    iconLeft: strType(),
+    icon: strType(),
     iconRight: strType(),
     ...props
   };
 });
 
 const mclass = props => {
-  const { states } = getBtn();
-  const cpyps = Object.assign({}, props);
+  const { states, sizes, types, colors } = getBtn();
   const cls = [];
-
   // special case for circle
-  cpyps.actionCircle &&
-    (cpyps.action = delete cpyps.actionCircle) &&
-    cls.push('s-circle');
+  props.actionCircle && (props.action = true) && cls.push('s-circle');
   // input group button case
-  cpyps.inputGrp && delete cpyps.inputGrp && cls.push('input-group-btn');
+  props.inputGrp && cls.push('input-group-btn');
 
-  // handle boolean properties
-  boolKeys(cpyps).forEach(v => {
-    cls.push(states.includes(v) ? v : 'btn-' + v);
-  });
+  const addCls = prefix => v => props[v] && cls.push(prefix + v);
+  const btnCls = addCls('btn-');
+  sizes.forEach(btnCls);
+  colors.forEach(btnCls);
+  types.forEach(btnCls);
+  states.forEach(addCls(''));
 
   return cls;
 };
 
 export default {
   functional: true,
+  mixins: [Tooltip],
   get props() {
     delete this.props;
     return (this.props = cprops());
   },
   render(h, { props, data, children }) {
     // handle the icon component position
-    const icon = props.iconLeft || props.iconRight;
+    const icon = props.icon || props.iconRight;
     const icnVm = icon && h(Icon, { props: { icon } });
     let child = children || [];
     child =
-      (props.iconLeft && [icnVm, ' ', ...child]) ||
+      (props.icon && [icnVm, ' ', ...child]) ||
       (props.iconRight && [...child, ' ', icnVm]) ||
       child;
 
     return h(
       props.tag,
-      mergeData(data, {
+      mergeData(data, tooltipData(props), {
         staticClass: 'btn',
         class: mclass(props)
       }),
