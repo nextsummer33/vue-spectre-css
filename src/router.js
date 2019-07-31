@@ -15,6 +15,7 @@ import Tooltip from './views/Tooltip.vue';
 import Breadcrumb from './views/Breadcrumb.vue';
 import Popover from './views/Popover.vue';
 import Step from './views/Step.vue';
+import Nav from './views/Nav.vue';
 
 Vue.use(Router);
 
@@ -96,6 +97,11 @@ export default new Router({
       path: '/step',
       name: 'Step',
       component: Step
+    },
+    {
+      path: '/nav',
+      name: 'Nav',
+      component: Nav
     }
     // {
     //   path: '/about',

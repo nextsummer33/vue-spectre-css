@@ -10,6 +10,7 @@ import Panel from './panel';
 import Breadcrumb from './breadcrumb';
 import Popover from './popover';
 import Step from './step';
+import Nav from './nav';
 
 export default {
   install: Vue => {
@@ -25,5 +26,6 @@ export default {
     Vue.use(Breadcrumb);
     Vue.use(Popover);
     Vue.use(Step);
+    Vue.use(Nav);
   }
 };
