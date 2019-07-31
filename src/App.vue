@@ -17,6 +17,7 @@
       <router-link to="/popover">Popover</router-link> |
       <router-link to="/step">Step</router-link> |
       <router-link to="/nav">Nav</router-link> |
+      <router-link to="/modal">Modal</router-link> |
     </div>
     <router-view />
   </div>

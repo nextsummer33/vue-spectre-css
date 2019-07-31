@@ -11,6 +11,7 @@ import Breadcrumb from './breadcrumb';
 import Popover from './popover';
 import Step from './step';
 import Nav from './nav';
+import Modal from './modal';
 
 export default {
   install: Vue => {
@@ -27,5 +28,6 @@ export default {
     Vue.use(Popover);
     Vue.use(Step);
     Vue.use(Nav);
+    Vue.use(Modal);
   }
 };

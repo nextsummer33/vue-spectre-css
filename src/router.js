@@ -16,6 +16,7 @@ import Breadcrumb from './views/Breadcrumb.vue';
 import Popover from './views/Popover.vue';
 import Step from './views/Step.vue';
 import Nav from './views/Nav.vue';
+import Modal from './views/Modal.vue';
 
 Vue.use(Router);
 
@@ -102,6 +103,11 @@ export default new Router({
       path: '/nav',
       name: 'Nav',
       component: Nav
+    },
+    {
+      path: '/modal',
+      name: 'Modal',
+      component: Modal
     }
     // {
     //   path: '/about',

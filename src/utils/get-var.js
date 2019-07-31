@@ -24,6 +24,7 @@ export const getInput = () => getVariable('input');
 export const getForm = () => getVariable('form');
 export const getAvatar = () => getVariable('avatar');
 export const getToast = () => getVariable('toast');
+export const getModal = () => getVariable('modal');
 
 export default {
   getDirections,
@@ -38,5 +39,6 @@ export default {
   getInput,
   getForm,
   getAvatar,
-  getToast
+  getToast,
+  getModal
 };

@@ -49,5 +49,8 @@ export default {
   },
   toast: {
     colors: ['primary', 'success', 'warning', 'error']
+  },
+  modal: {
+    sizes: ['sm', 'lg']
   }
 };
