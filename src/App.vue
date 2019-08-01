@@ -18,6 +18,8 @@
       <router-link to="/step">Step</router-link> |
       <router-link to="/nav">Nav</router-link> |
       <router-link to="/modal">Modal</router-link> |
+      <router-link to="/emptystate">Empty state</router-link> |
+      <router-link to="/menu">Menu</router-link> |
     </div>
     <router-view />
   </div>

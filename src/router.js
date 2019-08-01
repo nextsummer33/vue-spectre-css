@@ -17,6 +17,8 @@ import Popover from './views/Popover.vue';
 import Step from './views/Step.vue';
 import Nav from './views/Nav.vue';
 import Modal from './views/Modal.vue';
+import Emptystate from './views/Emptystate.vue';
+import Menu from './views/Menu.vue';
 
 Vue.use(Router);
 
@@ -108,6 +110,16 @@ export default new Router({
       path: '/modal',
       name: 'Modal',
       component: Modal
+    },
+    {
+      path: '/emptystate',
+      name: 'Emptystate',
+      component: Emptystate
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: Menu
     }
     // {
     //   path: '/about',

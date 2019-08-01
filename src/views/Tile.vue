@@ -51,14 +51,14 @@
         </s-tile>
 
         <s-tile>
-          <template v-slot:icon>
+          <template #icon>
             <s-avatar initial="YZ" presence="busy" />
           </template>
-          <template v-slot:content>
+          <template #content>
             <div>Hello World</div>
             <div>sdfsdfsfs</div>
           </template>
-          <template v-slot:action>
+          <template #action>
             <s-btn primary>Join</s-btn>
             <s-btn link>Me</s-btn>
           </template>

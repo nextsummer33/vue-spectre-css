@@ -12,6 +12,8 @@ import Popover from './popover';
 import Step from './step';
 import Nav from './nav';
 import Modal from './modal';
+import Emptystate from './emptystate';
+import Menu from './menu';
 
 export default {
   install: Vue => {
@@ -29,5 +31,7 @@ export default {
     Vue.use(Step);
     Vue.use(Nav);
     Vue.use(Modal);
+    Vue.use(Emptystate);
+    Vue.use(Menu);
   }
 };

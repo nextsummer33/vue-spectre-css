@@ -16,16 +16,11 @@
           </s-nav-item>
         </s-nav>
       </s-col>
-      <s-col col="6">
-
-      </s-col>
+      <s-col col="6"> </s-col>
     </s-row>
   </s-grid>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
-

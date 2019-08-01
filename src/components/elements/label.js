@@ -22,7 +22,6 @@ const mclass = memoize(props => {
 }, true);
 
 export default {
-  name: 'SLabel',
   functional: true,
   get props() {
     delete this.props;

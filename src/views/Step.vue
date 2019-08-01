@@ -52,7 +52,7 @@ export default {
         { text: 'Step 2', tooltip: 'Tooltip 2' },
         { text: 'Step 3', tooltip: 'Tooltip 3' }
       ]
-    }
+    };
   }
-}
+};
 </script>
