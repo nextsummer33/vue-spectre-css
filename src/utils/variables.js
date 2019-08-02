@@ -1,4 +1,4 @@
-export default {
+export default Object.freeze({
   directions: ['left', 'right', 'top', 'bottom'],
   layout: {
     viewports: ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -53,4 +53,4 @@ export default {
   modal: {
     sizes: ['sm', 'lg']
   }
-};
+});

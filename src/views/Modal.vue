@@ -47,6 +47,25 @@
             Jelly-o sesame snaps halvah croissant oat cake cookie. Cheesecake
             bear claw topping. Chupa chups apple pie carrot cake chocolate cake
             caramels.
+            <div>
+              <s-checkbox label="Hello world"/>
+              <s-checkbox label="Hello world" switch />
+              <s-checkbox label="Hello world" switch />
+              <s-checkbox label="Hello world" switch />
+              <s-checkbox label="Hello world" switch />
+              <s-checkbox label="Hello world" switch />
+              <s-checkbox label="Hello world" switch />
+              <s-btn-grp>
+                <s-btn>Button 1</s-btn>
+                <s-btn>Button 2</s-btn>
+                <s-btn>Button 3</s-btn>
+              </s-btn-grp>
+              <s-btn-grp>
+                <s-btn>Button 1</s-btn>
+                <s-btn>Button 2</s-btn>
+                <s-btn>Button 3</s-btn>
+              </s-btn-grp>
+            </div>
           </s-modal-body>
           <s-modal-footer>
             <s-btn>Save</s-btn>

@@ -1,5 +1,12 @@
 import { strType, arrType, numType } from '@/utils/proptypes';
 import StepItem from './step-item';
+import memoize from '@/utils/memoize';
+
+const cprops = memoize(() => ({
+  tag: strType('ul'),
+  items: arrType(),
+  value: numType()
+}));
 
 export default {
   inheritAttrs: false,
@@ -7,40 +14,34 @@ export default {
     prop: 'value',
     event: 'change'
   },
-  props: {
-    tag: strType('ul'),
-    items: arrType(),
-    value: numType()
+  get props() {
+    delete this.props;
+    return (this.props = cprops());
   },
-  data() {
-    return {
-      current: 0
-    };
-  },
+  data: () => ({
+    current: 0
+  }),
   watch: {
     value(v) {
       this.current = v;
     }
   },
-  methods: {
-    onSelect(v) {
-      this.current = v;
-      this.$emit('change', v);
-    }
-  },
   render(h) {
     const vm = this;
-    const itemEl = ({ tooltip, text }, idx) => {
-      return h(
-        StepItem,
-        {
-          on: { click: _ => vm.onSelect(idx) },
-          attrs: { active: vm.current === idx, tooltip }
-        },
-        text
-      );
+    const itemEl = ({ tooltip, text }, i) => {
+      const click = ev => {
+        ev.preventDefault();
+        vm.current = i;
+        vm.$emit('change', i);
+      };
+      const itemData = {
+        on: { click },
+        attrs: { active: vm.current === i, tooltip }
+      };
+      return h(StepItem, itemData, text);
     };
-    const ch = vm.$slots.default ? [vm.$slots.default] : vm.items.map(itemEl);
+
+    const ch = vm.$slots.default || vm.items.map(itemEl);
     return h(this.tag, { staticClass: 'step' }, ch);
   }
 };

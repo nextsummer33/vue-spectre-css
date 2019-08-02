@@ -25,6 +25,7 @@ export default {
     if (data.model) {
       const cb = listeners.input;
       data.on.input = ev => {
+        console.log(ev.target.composing);
         cb(ev.target.value);
       };
     }

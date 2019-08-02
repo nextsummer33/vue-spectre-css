@@ -14,10 +14,10 @@ export function tooltipData(props) {
     ? ' tooltip-right'
     : '';
 
-  return {
+  return Object.freeze({
     staticClass: 'tooltip' + posCls,
     attrs: { 'data-tooltip': '' + props.tooltip }
-  };
+  });
 }
 
 const cprops = () =>

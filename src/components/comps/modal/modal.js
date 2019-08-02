@@ -47,7 +47,7 @@ export default {
       vm[v] && arr.push('modal-' + v);
       return arr;
     }, []);
-    const vdata = mergeData(this.$data, activeData(vm), {
+    const vdata = mergeData(this.$data, activeData(vm.$props), {
       staticClass: 'modal',
       class: cls
     });

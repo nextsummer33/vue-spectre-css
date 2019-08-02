@@ -10,12 +10,10 @@ import {
   activeData
 } from '@/components/mixins';
 
-const cprops = memoize(() => {
-  return {
-    tag: strType('a'),
-    to: strType('#')
-  };
-});
+const cprops = memoize(() => ({
+  tag: strType('a'),
+  to: strType('#')
+}));
 
 export default {
   functional: true,
@@ -30,11 +28,7 @@ export default {
       badgeData(props),
       tooltipData(props),
       activeData(props),
-      {
-        attrs: {
-          href: props.to
-        }
-      }
+      { attrs: { href: props.to } }
     );
     return h(props.tag, vdata, children);
   }

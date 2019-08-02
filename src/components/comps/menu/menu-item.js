@@ -1,17 +1,14 @@
 import { strType, boolType } from '@/utils/proptypes';
 import Badge from './menu-badge';
-import Link from '@/components/elements/link';
+import { SLink } from '@/components/elements';
 import memoize from '@/utils/memoize';
 
-const cprops = memoize(() => {
-  return {
-    tag: strType('li'),
-    title: strType(),
-    divider: boolType(),
-    content: strType(),
-    badge: strType()
-  };
-});
+const cprops = memoize(() => ({
+  tag: strType('li'),
+  divider: boolType(),
+  badge: strType(),
+  title: strType('')
+}));
 
 export default {
   functional: true,
@@ -19,30 +16,29 @@ export default {
     delete this.props;
     return (this.props = cprops());
   },
-  render(h, { props, data, slots, listeners }) {
+  render(h, { props, data, slots }) {
     // return meneu item as divider if divider is set
     if (props.divider) {
       return h(props.tag, {
         staticClass: 'divider',
-        attrs: { 'data-content': props.content }
+        attrs: { 'data-content': props.title }
       });
     }
 
-    const slotEls = slots();
+    slots = slots();
+    let els = slots.default;
 
-    let ch = slotEls.default || [
-      // content slot or link element by default
-      slotEls.content ||
-        h(
-          Link,
-          { attrs: data.attrs, on: { click: listeners.click || (_ => {}) } },
-          [props.title]
-        ),
+    if (!els) {
+      // passing data into link element
+      const linkEl = h(SLink, data, props.title);
       // badge slot or babdge element by default
-      (slotEls.badge && h(Badge, slotEls.badge)) ||
-        (props.badge && h(Badge, { props: { value: props.badge } }))
-    ];
+      const badgeEl =
+        (slots.badge && h(Badge, slots.badge)) ||
+        (props.badge && h(Badge, { props: { value: props.badge } }));
 
-    return h(props.tag, { staticClass: 'menu-item' }, ch);
+      els = [linkEl, badgeEl];
+    }
+
+    return h(props.tag, { staticClass: 'menu-item' }, els);
   }
 };

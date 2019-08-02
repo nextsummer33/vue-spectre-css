@@ -1,7 +1,7 @@
 <template>
   <s-grid>
     <s-row>
-      <s-col col="5">
+      <s-col col="12">
         <s-tile>
           <s-tile-icon
             avatar
@@ -14,6 +14,46 @@
             <s-btn>Contact</s-btn>
           </s-tile-action>
         </s-tile>
+
+        <s-tile>
+          <s-tile-icon
+            avatar
+            src="https://picturepan2.github.io/spectre/img/avatar-3.png"
+            presence="online"
+          />
+          <s-tile-content v-bind="msg1" />
+          <s-tile-action>
+            <s-btn primary class="mr-2">Join</s-btn>
+            <s-btn>Contact</s-btn>
+          </s-tile-action>
+        </s-tile>
+
+        <s-tile>
+          <s-tile-icon
+            avatar
+            src="https://picturepan2.github.io/spectre/img/avatar-3.png"
+            presence="online"
+          />
+          <s-tile-content v-bind="msg1" />
+          <s-tile-action>
+            <s-btn primary class="mr-2">Join</s-btn>
+            <s-btn>Contact</s-btn>
+          </s-tile-action>
+        </s-tile>
+
+        <s-tile>
+          <s-tile-icon
+            avatar
+            src="https://picturepan2.github.io/spectre/img/avatar-3.png"
+            presence="online"
+          />
+          <s-tile-content v-bind="msg1" />
+          <s-tile-action>
+            <s-btn primary class="mr-2">Join</s-btn>
+            <s-btn>Contact</s-btn>
+          </s-tile-action>
+        </s-tile>
+
         <s-tile>
           <s-tile-icon
             avatar
