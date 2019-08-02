@@ -23,20 +23,23 @@ export default {
     let els = slots.default;
 
     if (!els) {
-      const menuEl = slots.menu;
-      const toggleData = {
-        attrs: data.attrs,
-        on: { toggle: listeners.toggle || (_ => {}) },
-        props: { title: props.title }
-      };
-      els = [h(Toggle, toggleData, menuEl || undefined)].concat(
-        props.btnGrp ? [] : menuEl ? [menuEl] : []
-      );
+      const menuEl = slots.menu,
+        toggleData = {
+          attrs: data.attrs,
+          on: { toggle: listeners.toggle || (_ => {}) },
+          props: { title: props.title }
+        };
+
+      els = [
+        h(Toggle, toggleData, menuEl || undefined),
+        ...(props.btnGrp ? [] : menuEl ? [menuEl] : [])
+      ];
     }
-    const cname = 'dropdown';
-    const vdata = mergeData(activeData(props), {
-      staticClass: props.right ? `${cname} ${cname}-right` : cname
-    });
+
+    const cname = 'dropdown',
+      vdata = mergeData(activeData(props), {
+        staticClass: props.right ? `${cname} ${cname}-right` : cname
+      });
     return h(props.tag, vdata, els);
   }
 };

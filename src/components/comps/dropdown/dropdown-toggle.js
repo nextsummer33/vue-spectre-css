@@ -9,14 +9,14 @@ export default {
     title: strType('')
   },
   render(h, { props, data, listeners, children }) {
-    const onclick = { click: listeners.click || (_ => {}) };
-    const ontoggle = { click: listeners.toggle || (_ => {}) };
-    const toggleData = {
-      staticClass: 'dropdown-toggle',
-      on: ontoggle,
-      attrs: { tabindex: 0, href: '#' },
-      props: { iconRight: 'caret', tag: 'a' }
-    };
+    const onclick = { click: listeners.click || (_ => {}) },
+      ontoggle = { click: listeners.toggle || (_ => {}) },
+      toggleData = {
+        staticClass: 'dropdown-toggle',
+        on: ontoggle,
+        attrs: { tabindex: 0, href: '#' },
+        props: { iconRight: 'caret', tag: 'a' }
+      };
 
     if (props.btnGrp) {
       const btnData = {
