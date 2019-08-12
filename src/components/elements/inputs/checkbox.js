@@ -74,7 +74,6 @@ function render(h, { props, data, listeners }) {
 export default {
   name: 'SCheckbox',
   functional: true,
-  inheritAttrs: false,
   mixins,
   model: {
     prop: 'checked',

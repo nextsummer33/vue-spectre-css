@@ -31,10 +31,14 @@ export const numStrObjType = (v = null, vlr = ud) =>
 export const allType = (v = null, vlr = ud) =>
   declare([Array, Number, String, Boolean], v, vlr);
 
+export const numStrArrType = (v = null, vlr = ud) =>
+  declare([Number, String, Array], v, vlr);
+
 export default {
   allType,
   arrType,
   boolType,
+  numStrArrType,
   numStrBoolType,
   numStrObjType,
   numStrType,

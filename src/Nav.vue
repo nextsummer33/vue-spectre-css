@@ -19,6 +19,7 @@
     <router-link to="/modal">Modal</router-link> |
     <router-link to="/emptystate">Empty state</router-link> |
     <router-link to="/menu">Menu</router-link> |
+    <router-link to="/bar">Bar</router-link> |
   </div>
 </template>
 

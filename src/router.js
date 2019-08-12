@@ -19,6 +19,7 @@ import Nav from './views/Nav.vue';
 import Modal from './views/Modal.vue';
 import Emptystate from './views/Emptystate.vue';
 import Menu from './views/Menu.vue';
+import Bar from './views/Bar.vue';
 
 Vue.use(Router);
 
@@ -120,6 +121,11 @@ export default new Router({
       path: '/menu',
       name: 'menu',
       component: Menu
+    },
+    {
+      path: '/bar',
+      name: 'bar',
+      component: Bar
     }
     // {
     //   path: '/about',

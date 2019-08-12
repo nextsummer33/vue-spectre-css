@@ -14,13 +14,13 @@ export default {
       toggleData = {
         staticClass: 'dropdown-toggle',
         on: ontoggle,
-        attrs: { tabindex: 0, href: '#' },
+        attrs: { tabindex: 0 },
         props: { iconRight: 'caret', tag: 'a' }
       };
 
     if (props.btnGrp) {
       const btnData = {
-        attrs: { ...data.attrs, href: '#' },
+        attrs: { ...data.attrs },
         props: { tag: 'a' }
       };
 

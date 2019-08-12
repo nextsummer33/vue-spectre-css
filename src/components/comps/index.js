@@ -15,6 +15,7 @@ import Modal from './modal';
 import Emptystate from './emptystate';
 import Menu from './menu';
 import Dropdown from './dropdown';
+import Bar from './bar';
 
 export default {
   install: Vue => {
@@ -35,5 +36,6 @@ export default {
     Vue.use(Emptystate);
     Vue.use(Menu);
     Vue.use(Dropdown);
+    Vue.use(Bar);
   }
 };
