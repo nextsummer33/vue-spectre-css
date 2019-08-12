@@ -16,26 +16,28 @@ import Emptystate from './emptystate';
 import Menu from './menu';
 import Dropdown from './dropdown';
 import Bar from './bar';
+import Accordion from './accordion';
 
 export default {
-  install: Vue => {
-    Vue.use(Navbar);
-    Vue.use(Hero);
-    Vue.use(Tile);
-    Vue.use(Avatar);
-    Vue.use(Chip);
-    Vue.use(Toast);
-    Vue.use(Tab);
-    Vue.use(Card);
-    Vue.use(Panel);
-    Vue.use(Breadcrumb);
-    Vue.use(Popover);
-    Vue.use(Step);
-    Vue.use(Nav);
-    Vue.use(Modal);
-    Vue.use(Emptystate);
-    Vue.use(Menu);
-    Vue.use(Dropdown);
-    Vue.use(Bar);
+  install: vue => {
+    vue.use(Navbar);
+    vue.use(Hero);
+    vue.use(Tile);
+    vue.use(Avatar);
+    vue.use(Chip);
+    vue.use(Toast);
+    vue.use(Tab);
+    vue.use(Card);
+    vue.use(Panel);
+    vue.use(Breadcrumb);
+    vue.use(Popover);
+    vue.use(Step);
+    vue.use(Nav);
+    vue.use(Modal);
+    vue.use(Emptystate);
+    vue.use(Menu);
+    vue.use(Dropdown);
+    vue.use(Bar);
+    vue.use(Accordion);
   }
 };

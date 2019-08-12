@@ -20,6 +20,7 @@
     <router-link to="/emptystate">Empty state</router-link> |
     <router-link to="/menu">Menu</router-link> |
     <router-link to="/bar">Bar</router-link> |
+    <router-link to="/accordion">Accordion</router-link> |
   </div>
 </template>
 

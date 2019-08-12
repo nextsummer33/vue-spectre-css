@@ -20,6 +20,7 @@ import Modal from './views/Modal.vue';
 import Emptystate from './views/Emptystate.vue';
 import Menu from './views/Menu.vue';
 import Bar from './views/Bar.vue';
+import Accordion from './views/Accordion.vue';
 
 Vue.use(Router);
 
@@ -126,6 +127,11 @@ export default new Router({
       path: '/bar',
       name: 'bar',
       component: Bar
+    },
+    {
+      path: '/accordion',
+      name: 'accordion',
+      component: Accordion
     }
     // {
     //   path: '/about',
