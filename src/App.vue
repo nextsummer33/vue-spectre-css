@@ -11,7 +11,7 @@ export default {
   components: {
     mynav: Nav
   }
-}
+};
 </script>
 
 <style>

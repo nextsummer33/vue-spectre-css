@@ -6,7 +6,6 @@
           <s-tile-icon
             avatar
             src="https://picturepan2.github.io/spectre/img/avatar-3.png"
-            presence="online"
           />
           <s-tile-content v-bind="msg1" />
           <s-tile-action>
@@ -19,7 +18,6 @@
           <s-tile-icon
             avatar
             src="https://picturepan2.github.io/spectre/img/avatar-3.png"
-            presence="online"
           />
           <s-tile-content v-bind="msg1" />
           <s-tile-action>

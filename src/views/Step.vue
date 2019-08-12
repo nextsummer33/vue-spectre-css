@@ -4,10 +4,30 @@
       <s-col col="12">
         <s-step :items="items" v-model="step" />
         <s-step>
-          <s-step-item tooltip="item 1" :active="step == 0" @click.prevent="step = 0" title="Item 1" />
-          <s-step-item tooltip="item 2" :active="step == 1" @click.prevent="step = 1" title="Item 2" />
-          <s-step-item tooltip="item 3" :active="step == 2" @click.prevent="step = 2" title="Item 3" />
-          <s-step-item tooltip="item 4" :active="step == 3" @click.prevent="step = 3" title="Item 4" />
+          <s-step-item
+            tooltip="item 1"
+            :active="step == 0"
+            @click.prevent="step = 0"
+            title="Item 1"
+          />
+          <s-step-item
+            tooltip="item 2"
+            :active="step == 1"
+            @click.prevent="step = 1"
+            title="Item 2"
+          />
+          <s-step-item
+            tooltip="item 3"
+            :active="step == 2"
+            @click.prevent="step = 2"
+            title="Item 3"
+          />
+          <s-step-item
+            tooltip="item 4"
+            :active="step == 3"
+            @click.prevent="step = 3"
+            title="Item 4"
+          />
         </s-step>
       </s-col>
     </s-row>

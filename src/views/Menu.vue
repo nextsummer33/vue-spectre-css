@@ -6,14 +6,16 @@
           <s-menu-item title="LINKS" divider />
           <s-menu-item title="Slack" @click.prevent="say" badge="2" />
           <s-menu-item title="Hipchat" @click.prevent="say" />
-          <s-menu-item title="Skype"  @click.prevent="say" badge="Awesome" />
+          <s-menu-item title="Skype" @click.prevent="say" badge="Awesome" />
         </s-menu>
       </s-col>
       <s-col mdCol="6" smCol="6">
         <s-menu>
           <s-menu-item title="Profile">
             <template #badge>
-              <s-avatar src="https://picturepan2.github.io/spectre/img/avatar-4.png" />
+              <s-avatar
+                src="https://picturepan2.github.io/spectre/img/avatar-4.png"
+              />
             </template>
           </s-menu-item>
           <s-menu-item divider />
@@ -23,7 +25,7 @@
             </template>
           </s-menu-item>
           <s-menu-item title="World" />
-          <s-menu-item title="profile" badge="4"/>
+          <s-menu-item title="profile" badge="4" />
         </s-menu>
       </s-col>
       <s-col mdCol="6" smCol="6">
@@ -32,7 +34,7 @@
             <s-dropdown-toggle title="Dropdown" />
             <s-menu>
               <s-menu-item title="World" />
-              <s-menu-item title="profile" badge="4"/>
+              <s-menu-item title="profile" badge="4" />
             </s-menu>
           </s-dropdown>
         </div>
@@ -41,7 +43,7 @@
             <s-dropdown-toggle btn-grp title="Dropdown">
               <s-menu>
                 <s-menu-item title="World" />
-                <s-menu-item title="profile" badge="4"/>
+                <s-menu-item title="profile" badge="4" />
                 <s-menu-item divider title="Inputs" />
                 <s-menu-item>
                   <s-checkbox label="form-checkbox" />
@@ -68,7 +70,6 @@
             </template>
           </s-dropdown>
         </div>
-
       </s-col>
       <s-col mdCol="6" smCol="6">
         <s-menu>

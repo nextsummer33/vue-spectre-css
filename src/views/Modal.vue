@@ -48,7 +48,7 @@
             bear claw topping. Chupa chups apple pie carrot cake chocolate cake
             caramels.
             <div>
-              <s-checkbox label="Hello world"/>
+              <s-checkbox label="Hello world" />
               <s-checkbox label="Hello world" switch />
               <s-checkbox label="Hello world" switch />
               <s-checkbox label="Hello world" switch />

@@ -28,7 +28,7 @@
         </s-accordion>
       </s-col>
       <s-col>
-       <s-accordion for="accordion-3" mut>
+        <s-accordion for="accordion-3" mut>
           <template #header>
             <s-icon icon="arrow-right" class="mr-1" />
             Elements
@@ -58,7 +58,5 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
