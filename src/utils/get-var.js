@@ -1,15 +1,7 @@
 import memorize from './memoize';
 import vars from './variables';
 
-const getVariable = memorize(name => {
-  const v = vars[name] || {};
-  if (Array.isArray(v)) {
-    return [...v];
-  } else if (Object.getOwnPropertyNames(v).length > 0) {
-    return Object.assign({}, v);
-  }
-  return {};
-});
+const getVariable = memorize(name => vars[name] || {});
 
 export const getDirections = () => getVariable('directions');
 export const getLayout = () => getVariable('layout');

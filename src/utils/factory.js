@@ -15,32 +15,14 @@ const rnproxy = stclass => (h, { props, data, children }) =>
     children
   );
 
-export const fcomp = (tag, stclass) => {
-  return {
-    functional: true,
-    props: {
-      tag: strType(tag)
-    },
-    render: rnproxy(stclass)
-  };
-};
-
-export const comp = (tag, stclass) => {
-  return {
-    props: {
-      tag: strType(tag)
-    },
-    render(h) {
-      return h(
-        this.tag,
-        mergeData(this.$data, { staticClass: stclass }),
-        this.$slots.default
-      );
-    }
-  };
-};
+export const fcomp = (tag, stclass) => ({
+  functional: true,
+  props: {
+    tag: strType(tag)
+  },
+  render: rnproxy(stclass)
+});
 
 export default {
-  fcomp,
-  comp
+  fcomp
 };
