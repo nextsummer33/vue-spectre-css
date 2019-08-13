@@ -1,7 +1,7 @@
 import { getButton as getBtn } from '@/utils/get-var';
 import { mergeData } from 'vue-functional-data-merge';
 import { strType, boolType } from '@/utils/proptypes';
-import { tooltipData, Tooltip } from '@/components/mixins';
+import { tooltipData, Tooltip } from '@/mixins';
 import Icon from '../icon';
 import memoize from '@/utils/memoize';
 

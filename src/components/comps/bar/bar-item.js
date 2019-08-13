@@ -1,7 +1,7 @@
 import BarBtn from './bar-btn';
 import { boolType, strType, numStrType } from '@/utils/proptypes';
 import { debounce } from '@/utils/helper';
-import { tooltipData } from '@/components/mixins';
+import { tooltipData } from '@/mixins';
 import { memoize } from '@/utils/memoize';
 import { mergeData } from 'vue-functional-data-merge';
 

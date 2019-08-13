@@ -5,7 +5,7 @@ import {
   colorData,
   sizeData,
   inlineData
-} from '@/components/mixins';
+} from '@/mixins';
 
 export default {
   name: 'SRadio',

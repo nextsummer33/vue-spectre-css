@@ -1,6 +1,6 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { strType, arrType, boolType } from '@/utils/proptypes';
-import { Active, activeData } from '@/components/mixins';
+import { Active, activeData } from '@/mixins';
 
 export default {
   functional: true,

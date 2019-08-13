@@ -1,5 +1,5 @@
 import { strType } from '@/utils/proptypes';
-import { Active, activeData, Badge, badgeData } from '@/components/mixins';
+import { Active, activeData, Badge, badgeData } from '@/mixins';
 import { mergeData } from 'vue-functional-data-merge';
 
 export default {

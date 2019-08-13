@@ -1,5 +1,5 @@
 import { SBtn } from '@/components/elements/';
-import { Tooltip, tooltipData } from '@/components/mixins';
+import { Tooltip, tooltipData } from '@/mixins';
 import { mergeData } from 'vue-functional-data-merge';
 
 export default {

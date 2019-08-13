@@ -8,7 +8,7 @@ import {
   badgeData,
   Active,
   activeData
-} from '@/components/mixins';
+} from '@/mixins';
 
 const cprops = memoize(() => ({
   tag: strType('a'),

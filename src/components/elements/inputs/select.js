@@ -2,7 +2,7 @@ import { arrType, strType, strArrType } from '@/utils/proptypes';
 import { contains } from '@/utils/array';
 import { isExist, isObj, isStr } from '@/utils/object';
 import { mergeData } from 'vue-functional-data-merge';
-import { Color, Size, colorData, sizeData } from '@/components/mixins';
+import { Color, Size, colorData, sizeData } from '@/mixins';
 
 export default {
   name: 'SSelect',

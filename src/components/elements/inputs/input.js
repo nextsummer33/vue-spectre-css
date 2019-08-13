@@ -1,6 +1,6 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { strType, boolType } from '@/utils/proptypes';
-import { Color, Size, colorData, sizeData } from '@/components/mixins';
+import { Color, Size, colorData, sizeData } from '@/mixins';
 import Icon from '../icon';
 
 export default {

@@ -1,5 +1,5 @@
 import { strType, boolType } from '@/utils/proptypes';
-import { Active, activeData } from '@/components/mixins';
+import { Active, activeData } from '@/mixins';
 import Toggle from './dropdown-toggle';
 import memoize from '@/utils/memoize';
 import { mergeData } from 'vue-functional-data-merge';

@@ -1,6 +1,6 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { strType } from '@/utils/proptypes';
-import { AllSize, allSizeData } from '@/components/mixins';
+import { AllSize, allSizeData } from '@/mixins';
 import { SAvatarPresence as AP, SAvatarIcon as AI } from './index';
 import { getAvatar } from '@/utils/get-var';
 import { isExist } from '@/utils/object';

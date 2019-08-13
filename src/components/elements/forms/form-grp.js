@@ -1,4 +1,4 @@
-import { Color, colorData } from '@/components/mixins';
+import { Color, colorData } from '@/mixins';
 import { getForm } from '@/utils/get-var';
 import { mergeData } from 'vue-functional-data-merge';
 import { strType, boolType, numStrObjType } from '@/utils/proptypes';

@@ -1,6 +1,6 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { strType } from '@/utils/proptypes';
-import { Size, sizeData } from '@/components/mixins';
+import { Size, sizeData } from '@/mixins';
 
 export default {
   functional: true,

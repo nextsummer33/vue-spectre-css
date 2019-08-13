@@ -1,6 +1,6 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { strType } from '@/utils/proptypes';
-import { Size, Inline, inlineData } from '@/components/mixins';
+import { Size, Inline, inlineData } from '@/mixins';
 import Addon from './addon';
 
 export default {

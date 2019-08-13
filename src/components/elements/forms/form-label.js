@@ -1,4 +1,4 @@
-import { Size, sizeData } from '@/components/mixins';
+import { Size, sizeData } from '@/mixins';
 import { mergeData } from 'vue-functional-data-merge';
 import { strType } from '@/utils/proptypes';
 

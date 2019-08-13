@@ -1,6 +1,6 @@
 import { strType, boolType } from '@/utils/proptypes';
 import { mergeData } from 'vue-functional-data-merge';
-import { Active, activeData } from '@/components/mixins';
+import { Active, activeData } from '@/mixins';
 import Container from './modal-container';
 import Overlay from './modal-overlay';
 import { getModal } from '@/utils/get-var';

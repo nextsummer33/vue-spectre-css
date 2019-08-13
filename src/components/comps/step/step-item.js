@@ -1,7 +1,7 @@
 import { mergeData } from 'vue-functional-data-merge';
 import { SLink } from '@/components/elements';
 import { strType } from '@/utils/proptypes';
-import { Active, activeData } from '@/components/mixins';
+import { Active, activeData } from '@/mixins';
 import memoize from '@/utils/memoize';
 
 const cprops = memoize(() => ({

@@ -5,7 +5,7 @@ import {
   colorData,
   sizeData,
   inlineData
-} from '@/components/mixins';
+} from '@/mixins';
 import { isExist, isObj } from '@/utils/object';
 import memoize from '@/utils/memoize';
 

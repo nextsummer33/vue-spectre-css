@@ -27,7 +27,6 @@
 
 <script>
 import { SToast } from '@/components/comps/toast';
-import Vue from 'vue';
 export default {
   methods: {
     showAlert() {
